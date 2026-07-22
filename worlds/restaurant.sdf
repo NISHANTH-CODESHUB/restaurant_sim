@@ -30,15 +30,16 @@
       <pose>0 0 3.5 0 0 0</pose>
     </include>
 
-    <!-- Lift Assembly (dynamic, plugin-driven elevator) - included at the top level,
-         NOT nested inside ground_floor_inst, so it stays non-static and the
-         lift_controller_plugin can find its joints correctly. Pose matches where
-         it used to sit relative to ground_floor's frame (ground_floor_inst itself
-         is at the world origin, so this is the same absolute placement). -->
+    <!-- Lift Assembly (now STATIC - no moving cabin/doors, no controller plugin).
+         Placed at the center of the back-left bay, on the same spot the staircase
+         used to occupy, so it sits on the main pathway. Yaw -1.5708 (-90 deg) turns
+         the lift to face +X, i.e. its doors open directly onto that pathway. The
+         cabin is parked "arrived" at the first floor (doors open there), not the
+         ground floor - see models/_fixtures/lift_assembly/model.sdf for details. -->
     <include>
       <name>lift_assembly_inst</name>
       <uri>model://_fixtures/lift_assembly</uri>
-      <pose>-10 5.5 0 0 0 0</pose>
+      <pose>-10 0 0 0 0 -1.5708</pose>
     </include>
 
   </world>

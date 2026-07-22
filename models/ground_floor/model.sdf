@@ -73,15 +73,12 @@
     <include><name>column_4</name><uri>model://_components/column</uri><pose>-2 4 0 0 0 0</pose></include>
     <include><name>column_5</name><uri>model://_components/column</uri><pose>2 4 0 0 0 0</pose></include>
 
-    <!-- Staircase & Lift (Back-Left Area) -->
-    <include><name>stairs</name><uri>model://_fixtures/staircase</uri><pose>-10 0 0 0 0 1.5708</pose></include>
-    <!-- lift_assembly intentionally NOT included here: it is a dynamic (non-static)
-         model with a controller plugin, and nesting it inside this static composite
-         model would (a) force it static too, since nested models inherit the parent's
-         staticness in Gazebo classic, and (b) break the plugin's joint lookups, since
-         nested-model plugins load against the outer model with scoped joint names.
-         It is included as a top-level sibling model in worlds/restaurant.sdf instead,
-         at the same absolute world pose (-10 5.5 0) it would have had here. -->
+    <!-- Staircase (Back-Left Area) - moved to the former lift spot, same working rotation -->
+    <include><name>stairs</name><uri>model://_fixtures/staircase</uri><pose>-10 5.5 0 0 0 1.5708</pose></include>
+    <!-- lift_assembly intentionally NOT included here: it is now a static model, but is still
+         kept as a top-level sibling model in worlds/restaurant.sdf (instead of nested here) so
+         its geometry/pose stay simple to edit independently of this composite. It now sits at
+         the center of this bay (-10 0 0), facing +X so its doors open onto the main pathway. -->
 
     <!-- Kitchen Partition Wall (x = 5.0) and Gaps for Counters / Doors -->
     <include><name>kitchen_partition_n</name><uri>model://_components/wall_segment_4m</uri><pose>5.0 7.0 0 0 0 1.5708</pose></include>
