@@ -1,0 +1,216 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="first_floor">
+    <static>true</static>
+    
+    <!-- Floor Slabs (grid excluding stair and lift openings) -->
+    <!-- Row 1 (y = -6) -->
+    <include><name>f1_floor_slab_0_0</name><uri>model://_components/floor_slab_transparent</uri><pose>-10 -6 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_1_0</name><uri>model://_components/floor_slab_transparent</uri><pose>-6 -6 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_2_0</name><uri>model://_components/floor_slab_transparent</uri><pose>-2 -6 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_3_0</name><uri>model://_components/floor_slab_transparent</uri><pose>2 -6 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_4_0</name><uri>model://_components/floor_slab_transparent</uri><pose>6 -6 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_5_0</name><uri>model://_components/floor_slab_transparent</uri><pose>10 -6 0 0 0 0</pose></include>
+
+    <!-- Row 2 (y = -2) -->
+    <include><name>f1_floor_slab_0_1</name><uri>model://_components/floor_slab_transparent</uri><pose>-10 -2 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_1_1</name><uri>model://_components/floor_slab_transparent</uri><pose>-6 -2 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_2_1</name><uri>model://_components/floor_slab_transparent</uri><pose>-2 -2 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_3_1</name><uri>model://_components/floor_slab_transparent</uri><pose>2 -2 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_4_1</name><uri>model://_components/floor_slab_transparent</uri><pose>6 -2 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_5_1</name><uri>model://_components/floor_slab_transparent</uri><pose>10 -2 0 0 0 0</pose></include>
+
+    <!-- Row 3 (y = 2) - Omit x = -10 (stair opening) -->
+    <include><name>f1_floor_slab_1_2</name><uri>model://_components/floor_slab_transparent</uri><pose>-6 2 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_2_2</name><uri>model://_components/floor_slab_transparent</uri><pose>-2 2 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_3_2</name><uri>model://_components/floor_slab_transparent</uri><pose>2 2 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_4_2</name><uri>model://_components/floor_slab_transparent</uri><pose>6 2 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_5_2</name><uri>model://_components/floor_slab_transparent</uri><pose>10 2 0 0 0 0</pose></include>
+
+    <!-- Row 4 (y = 6) - Omit x = -10 (lift opening) -->
+    <include><name>f1_floor_slab_1_3</name><uri>model://_components/floor_slab_transparent</uri><pose>-6 6 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_2_3</name><uri>model://_components/floor_slab_transparent</uri><pose>-2 6 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_3_3</name><uri>model://_components/floor_slab_transparent</uri><pose>2 6 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_4_3</name><uri>model://_components/floor_slab_transparent</uri><pose>6 6 0 0 0 0</pose></include>
+    <include><name>f1_floor_slab_5_3</name><uri>model://_components/floor_slab_transparent</uri><pose>10 6 0 0 0 0</pose></include>
+
+    <!-- Walking areas around the stair/lift openings -->
+    <link name="floor_fillers">
+      <pose>0 0 0 0 0 0</pose>
+      <!-- Left walking strip (x = -12 to -10.75, y = 0 to 8) -->
+      <collision name="strip_l_collision">
+        <pose>-11.375 4.0 0.025 0 0 0</pose>
+        <geometry><box><size>1.25 8.0 0.05</size></box></geometry>
+      </collision>
+      <visual name="strip_l_visual">
+        <pose>-11.375 4.0 0.025 0 0 0</pose>
+        <geometry><box><size>1.25 8.0 0.05</size></box></geometry>
+        <material><ambient>0.8 0.8 0.8 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse></material>
+      </visual>
+      <!-- Right walking strip (x = -9.25 to -8.0, y = 0 to 8) -->
+      <collision name="strip_r_collision">
+        <pose>-8.625 4.0 0.025 0 0 0</pose>
+        <geometry><box><size>1.25 8.0 0.05</size></box></geometry>
+      </collision>
+      <visual name="strip_r_visual">
+        <pose>-8.625 4.0 0.025 0 0 0</pose>
+        <geometry><box><size>1.25 8.0 0.05</size></box></geometry>
+        <material><ambient>0.8 0.8 0.8 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse></material>
+      </visual>
+      <!-- North walking strip (above lift shaft, y = 6.5 to 8.0, x = -11.0 to -9.0) -->
+      <collision name="strip_n_collision">
+        <pose>-10.0 7.25 0.025 0 0 0</pose>
+        <geometry><box><size>1.5 1.5 0.05</size></box></geometry>
+      </collision>
+      <visual name="strip_n_visual">
+        <pose>-10.0 7.25 0.025 0 0 0</pose>
+        <geometry><box><size>1.5 1.5 0.05</size></box></geometry>
+        <material><ambient>0.8 0.8 0.8 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse></material>
+      </visual>
+    </link>
+
+    <!-- Exterior Walls (First Floor) -->
+    <!-- South Facade (y = -8) -->
+    <include><name>f1_ext_wall_s0</name><uri>model://_components/wall_exterior</uri><pose>-10 -8 0 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s1</name><uri>model://_components/window_standard</uri><pose>-6 -8 0 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s2</name><uri>model://_components/window_standard</uri><pose>-2 -8 0 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s3</name><uri>model://_components/window_standard</uri><pose>2 -8 0 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s4</name><uri>model://_components/wall_exterior</uri><pose>6 -8 0 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s5</name><uri>model://_components/wall_exterior</uri><pose>10 -8 0 0 0 0</pose></include>
+
+    <!-- North Facade (y = 8) -->
+    <include><name>f1_ext_wall_n0</name><uri>model://_components/wall_exterior</uri><pose>-10 8 0 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n1</name><uri>model://_components/window_standard</uri><pose>-6 8 0 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n2</name><uri>model://_components/window_standard</uri><pose>-2 8 0 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n3</name><uri>model://_components/window_standard</uri><pose>2 8 0 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n4</name><uri>model://_components/wall_exterior</uri><pose>6 8 0 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n5</name><uri>model://_components/wall_exterior</uri><pose>10 8 0 0 0 3.14159</pose></include>
+
+    <!-- West Facade (x = -12) -->
+    <include><name>f1_ext_wall_w0</name><uri>model://_components/wall_exterior</uri><pose>-12 -6 0 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_w1</name><uri>model://_components/wall_exterior</uri><pose>-12 -2 0 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_w2</name><uri>model://_components/wall_exterior</uri><pose>-12 2 0 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_w3</name><uri>model://_components/wall_exterior</uri><pose>-12 6 0 0 0 1.5708</pose></include>
+
+    <!-- East Facade (x = 12) -->
+    <include><name>f1_ext_wall_e0</name><uri>model://_components/wall_exterior</uri><pose>12 -6 0 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_e1</name><uri>model://_components/wall_exterior</uri><pose>12 -2 0 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_e2</name><uri>model://_components/wall_exterior</uri><pose>12 2 0 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_e3</name><uri>model://_components/wall_exterior</uri><pose>12 6 0 0 0 1.5708</pose></include>
+
+    <!-- Pillars / Columns -->
+    <include><name>f1_column_0</name><uri>model://_components/column</uri><pose>-6 -4 0 0 0 0</pose></include>
+    <include><name>f1_column_1</name><uri>model://_components/column</uri><pose>-2 -4 0 0 0 0</pose></include>
+    <include><name>f1_column_2</name><uri>model://_components/column</uri><pose>2 -4 0 0 0 0</pose></include>
+    <include><name>f1_column_3</name><uri>model://_components/column</uri><pose>-6 4 0 0 0 0</pose></include>
+    <include><name>f1_column_4</name><uri>model://_components/column</uri><pose>-2 4 0 0 0 0</pose></include>
+    <include><name>f1_column_5</name><uri>model://_components/column</uri><pose>2 4 0 0 0 0</pose></include>
+
+    <!-- Cabin Corridor Partition Walls (along y = 1.0m and y = -1.0m) -->
+    <!-- North partitions (y = 1.0) -->
+    <include><name>corridor_n_wall_1</name><uri>model://_components/wall_segment_4m</uri><pose>-6 1.0 0 0 0 0</pose></include>
+    <include><name>corridor_n_wall_2</name><uri>model://_components/wall_segment_4m</uri><pose>-2 1.0 0 0 0 0</pose></include>
+    <include><name>corridor_n_wall_3</name><uri>model://_components/wall_segment_4m</uri><pose>2 1.0 0 0 0 0</pose></include>
+    <include><name>corridor_n_wall_4</name><uri>model://_components/wall_segment_4m</uri><pose>6 1.0 0 0 0 0</pose></include>
+
+    <!-- South partitions (y = -1.0) -->
+    <include><name>corridor_s_wall_1</name><uri>model://_components/wall_segment_4m</uri><pose>-6 -1.0 0 0 0 0</pose></include>
+    <include><name>corridor_s_wall_2</name><uri>model://_components/wall_segment_4m</uri><pose>-2 -1.0 0 0 0 0</pose></include>
+    <include><name>corridor_s_wall_3</name><uri>model://_components/wall_segment_4m</uri><pose>2 -1.0 0 0 0 0</pose></include>
+    <include><name>corridor_s_wall_4</name><uri>model://_components/wall_segment_4m</uri><pose>6 -1.0 0 0 0 0</pose></include>
+
+    <!-- Cabin Entry Doors (pre-opened, leading from corridor into cabins) -->
+    <!-- North Cabin Doors -->
+    <include><name>cabin_door_1</name><uri>model://_components/door_single</uri><pose>-6 1.0 0 0 0 0</pose></include>
+    <include><name>cabin_door_2</name><uri>model://_components/door_single</uri><pose>-2 1.0 0 0 0 0</pose></include>
+    <include><name>cabin_door_3</name><uri>model://_components/door_single</uri><pose>2 1.0 0 0 0 0</pose></include>
+    <include><name>cabin_door_4</name><uri>model://_components/door_single</uri><pose>6 1.0 0 0 0 0</pose></include>
+    <!-- South Cabin Doors -->
+    <include><name>cabin_door_5</name><uri>model://_components/door_single</uri><pose>-6 -1.0 0 0 0 3.14159</pose></include>
+    <include><name>cabin_door_6</name><uri>model://_components/door_single</uri><pose>-2 -1.0 0 0 0 3.14159</pose></include>
+    <include><name>cabin_door_7</name><uri>model://_components/door_single</uri><pose>2 -1.0 0 0 0 3.14159</pose></include>
+    <include><name>cabin_door_8</name><uri>model://_components/door_single</uri><pose>6 -1.0 0 0 0 3.14159</pose></include>
+
+    <!-- Cabin Division Walls (North-South partition walls) -->
+    <!-- North Division Walls (y = 1.0 to 8.0) -->
+    <include><name>div_wall_n0_a</name><uri>model://_components/wall_segment_4m</uri><pose>-8 3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_n0_b</name><uri>model://_components/wall_segment_4m</uri><pose>-8 6.0 0 0 0 1.5708</pose></include>
+
+    <include><name>div_wall_n1_a</name><uri>model://_components/wall_segment_4m</uri><pose>-4 3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_n1_b</name><uri>model://_components/wall_segment_4m</uri><pose>-4 6.0 0 0 0 1.5708</pose></include>
+
+    <include><name>div_wall_n2_a</name><uri>model://_components/wall_segment_4m</uri><pose>0 3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_n2_b</name><uri>model://_components/wall_segment_4m</uri><pose>0 6.0 0 0 0 1.5708</pose></include>
+
+    <include><name>div_wall_n3_a</name><uri>model://_components/wall_segment_4m</uri><pose>4 3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_n3_b</name><uri>model://_components/wall_segment_4m</uri><pose>4 6.0 0 0 0 1.5708</pose></include>
+
+    <include><name>div_wall_n4_a</name><uri>model://_components/wall_segment_4m</uri><pose>8 3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_n4_b</name><uri>model://_components/wall_segment_4m</uri><pose>8 6.0 0 0 0 1.5708</pose></include>
+
+    <!-- South Division Walls (y = -8.0 to -1.0) -->
+    <include><name>div_wall_s0_a</name><uri>model://_components/wall_segment_4m</uri><pose>-8 -3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_s0_b</name><uri>model://_components/wall_segment_4m</uri><pose>-8 -6.0 0 0 0 1.5708</pose></include>
+
+    <include><name>div_wall_s1_a</name><uri>model://_components/wall_segment_4m</uri><pose>-4 -3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_s1_b</name><uri>model://_components/wall_segment_4m</uri><pose>-4 -6.0 0 0 0 1.5708</pose></include>
+
+    <include><name>div_wall_s2_a</name><uri>model://_components/wall_segment_4m</uri><pose>0 -3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_s2_b</name><uri>model://_components/wall_segment_4m</uri><pose>0 -6.0 0 0 0 1.5708</pose></include>
+
+    <include><name>div_wall_s3_a</name><uri>model://_components/wall_segment_4m</uri><pose>4 -3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_s3_b</name><uri>model://_components/wall_segment_4m</uri><pose>4 -6.0 0 0 0 1.5708</pose></include>
+
+    <include><name>div_wall_s4_a</name><uri>model://_components/wall_segment_4m</uri><pose>8 -3.0 0 0 0 1.5708</pose></include>
+    <include><name>div_wall_s4_b</name><uri>model://_components/wall_segment_4m</uri><pose>8 -6.0 0 0 0 1.5708</pose></include>
+
+    <!-- East-most Storage / Utility Room Doors (at x = 8.0) -->
+    <include><name>utility_door_n</name><uri>model://_components/door_single</uri><pose>8 2.0 0 0 0 1.5708</pose></include>
+    <include><name>utility_door_s</name><uri>model://_components/door_single</uri><pose>8 -2.0 0 0 0 1.5708</pose></include>
+
+    <!-- Cabin Interior Bedroom Layout (converted from dining to bedrooms) -->
+    <!-- Cabin 1 (x = -6, y = 4.5) -->
+    <include><name>c1_bed</name><uri>model://_furniture/bed_single</uri><pose>-6 4.5 0 0 0 1.5708</pose></include>
+
+    <!-- Cabin 2 (x = -2, y = 4.5) -->
+    <include><name>c2_bed</name><uri>model://_furniture/bed_single</uri><pose>-2 4.5 0 0 0 1.5708</pose></include>
+
+    <!-- Cabin 3 (x = 2, y = 4.5) -->
+    <include><name>c3_bed</name><uri>model://_furniture/bed_single</uri><pose>2 4.5 0 0 0 1.5708</pose></include>
+
+    <!-- Cabin 4 (x = 6, y = 4.5) -->
+    <include><name>c4_bed</name><uri>model://_furniture/bed_single</uri><pose>6 4.5 0 0 0 1.5708</pose></include>
+    <!-- Cabin 5 (x = -6, y = -4.5) -->
+    <include><name>c5_bed</name><uri>model://_furniture/bed_single</uri><pose>-6 -4.5 0 0 0 1.5708</pose></include>
+
+    <!-- Cabin 6 (x = -2, y = -4.5) -->
+    <include><name>c6_bed</name><uri>model://_furniture/bed_single</uri><pose>-2 -4.5 0 0 0 1.5708</pose></include>
+
+    <!-- Cabin 7 (x = 2, y = -4.5) -->
+    <include><name>c7_bed</name><uri>model://_furniture/bed_single</uri><pose>2 -4.5 0 0 0 1.5708</pose></include>
+
+    <!-- Cabin 8 (x = 6, y = -4.5) -->
+    <include><name>c8_bed</name><uri>model://_furniture/bed_single</uri><pose>6 -4.5 0 0 0 1.5708</pose></include>
+
+    <!-- Plants removed from first floor (were a navigation/visual disturbance) -->
+
+    <!-- Ceiling Lights (First Floor Ceiling at z = 3.4m) -->
+    <!-- Corridor Lighting -->
+    <include><name>f1_light_corr_1</name><uri>model://_lighting/ceiling_light_panel</uri><pose>-9 0 3.4 0 0 0</pose></include>
+    <include><name>f1_light_corr_2</name><uri>model://_lighting/ceiling_light_panel</uri><pose>-5 0 3.4 0 0 0</pose></include>
+    <include><name>f1_light_corr_3</name><uri>model://_lighting/ceiling_light_panel</uri><pose>-1 0 3.4 0 0 0</pose></include>
+    <include><name>f1_light_corr_4</name><uri>model://_lighting/ceiling_light_panel</uri><pose>3 0 3.4 0 0 0</pose></include>
+    <include><name>f1_light_corr_5</name><uri>model://_lighting/ceiling_light_panel</uri><pose>7 0 3.4 0 0 0</pose></include>
+
+    <!-- Cabin Pendant Lights -->
+    <include><name>f1_pendant_light_1</name><uri>model://_lighting/pendant_light</uri><pose>-6 4.5 3.4 0 0 0</pose></include>
+    <include><name>f1_pendant_light_2</name><uri>model://_lighting/pendant_light</uri><pose>-2 4.5 3.4 0 0 0</pose></include>
+    <include><name>f1_pendant_light_3</name><uri>model://_lighting/pendant_light</uri><pose>2 4.5 3.4 0 0 0</pose></include>
+    <include><name>f1_pendant_light_4</name><uri>model://_lighting/pendant_light</uri><pose>6 4.5 3.4 0 0 0</pose></include>
+    <include><name>f1_pendant_light_5</name><uri>model://_lighting/pendant_light</uri><pose>-6 -4.5 3.4 0 0 0</pose></include>
+    <include><name>f1_pendant_light_6</name><uri>model://_lighting/pendant_light</uri><pose>-2 -4.5 3.4 0 0 0</pose></include>
+    <include><name>f1_pendant_light_7</name><uri>model://_lighting/pendant_light</uri><pose>2 -4.5 3.4 0 0 0</pose></include>
+    <include><name>f1_pendant_light_8</name><uri>model://_lighting/pendant_light</uri><pose>6 -4.5 3.4 0 0 0</pose></include>
+
+  </model>
+</sdf>

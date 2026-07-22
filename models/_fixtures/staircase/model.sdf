@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<!--
+  staircase | Module D - Fixtures
+  U-return stair rising 3.30 m (to first-floor level).
+  Total 20 risers @ 0.165 m = 3.30 m. Tread 0.30 m. Flight width 1.2 m.
+    Flight A: steps 1..10 going +X (0.165 -> 1.65 m), along Y in [0,1.2]
+    Landing:  at 1.65 m, 1.2 x 1.2 m
+    Flight B: steps 11..20 going -X (1.65 -> 3.30 m), along Y in [1.3,2.5]
+  Origin: bottom of Flight A, corner. Footprint ~ 3.0 (X) x 2.5 (Y).
+  R5: each step is a single box (visual doubles as collision geometry).
+-->
+<sdf version="1.6">
+  <model name="staircase">
+    <static>true</static>
+
+    <!-- ===================== FLIGHT A (steps 1..10, +X, Y 0..1.2) ===================== -->
+    <link name="flight_a">
+      <!-- Step template repeated; tread 0.30, rise 0.165, top of step n at n*0.165 -->
+      <!-- Step 1 -->
+      <collision name="a1_col"><pose>0.15 0.6 0.0825 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a1_vis"><pose>0.15 0.6 0.0825 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- Step 2 -->
+      <collision name="a2_col"><pose>0.45 0.6 0.2475 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a2_vis"><pose>0.45 0.6 0.2475 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- Step 3 -->
+      <collision name="a3_col"><pose>0.75 0.6 0.4125 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a3_vis"><pose>0.75 0.6 0.4125 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- Step 4 -->
+      <collision name="a4_col"><pose>1.05 0.6 0.5775 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a4_vis"><pose>1.05 0.6 0.5775 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- Step 5 -->
+      <collision name="a5_col"><pose>1.35 0.6 0.7425 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a5_vis"><pose>1.35 0.6 0.7425 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- Step 6 -->
+      <collision name="a6_col"><pose>1.65 0.6 0.9075 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a6_vis"><pose>1.65 0.6 0.9075 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- Step 7 -->
+      <collision name="a7_col"><pose>1.95 0.6 1.0725 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a7_vis"><pose>1.95 0.6 1.0725 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- Step 8 -->
+      <collision name="a8_col"><pose>2.25 0.6 1.2375 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a8_vis"><pose>2.25 0.6 1.2375 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- Step 9 -->
+      <collision name="a9_col"><pose>2.55 0.6 1.4025 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a9_vis"><pose>2.55 0.6 1.4025 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- Step 10 -->
+      <collision name="a10_col"><pose>2.85 0.6 1.5675 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="a10_vis"><pose>2.85 0.6 1.5675 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+    </link>
+
+    <!-- ===================== LANDING (at z=1.65, X 2.7..3.0, Y 0..2.5) ===================== -->
+    <link name="landing">
+      <collision name="landing_col"><pose>2.85 1.25 1.6425 0 0 0</pose><geometry><box><size>0.30 2.5 0.15</size></box></geometry></collision>
+      <visual name="landing_vis"><pose>2.85 1.25 1.6425 0 0 0</pose><geometry><box><size>0.30 2.5 0.15</size></box></geometry>
+        <material><ambient>0.28 0.28 0.30 1</ambient><diffuse>0.40 0.40 0.42 1</diffuse><specular>0.35 0.35 0.37 1</specular></material></visual>
+    </link>
+
+    <!-- ===================== FLIGHT B (steps 11..20, -X, Y 1.3..2.5) ===================== -->
+    <link name="flight_b">
+      <!-- Step 11 (first above landing 1.65) -->
+      <collision name="b11_col"><pose>2.55 1.9 1.7325 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b11_vis"><pose>2.55 1.9 1.7325 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- 12 -->
+      <collision name="b12_col"><pose>2.25 1.9 1.8975 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b12_vis"><pose>2.25 1.9 1.8975 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- 13 -->
+      <collision name="b13_col"><pose>1.95 1.9 2.0625 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b13_vis"><pose>1.95 1.9 2.0625 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- 14 -->
+      <collision name="b14_col"><pose>1.65 1.9 2.2275 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b14_vis"><pose>1.65 1.9 2.2275 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- 15 -->
+      <collision name="b15_col"><pose>1.35 1.9 2.3925 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b15_vis"><pose>1.35 1.9 2.3925 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- 16 -->
+      <collision name="b16_col"><pose>1.05 1.9 2.5575 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b16_vis"><pose>1.05 1.9 2.5575 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- 17 -->
+      <collision name="b17_col"><pose>0.75 1.9 2.7225 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b17_vis"><pose>0.75 1.9 2.7225 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- 18 -->
+      <collision name="b18_col"><pose>0.45 1.9 2.8875 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b18_vis"><pose>0.45 1.9 2.8875 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- 19 -->
+      <collision name="b19_col"><pose>0.15 1.9 3.0525 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b19_vis"><pose>0.15 1.9 3.0525 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+      <!-- 20 (top, reaches 3.30) -->
+      <collision name="b20_col"><pose>-0.15 1.9 3.2175 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry></collision>
+      <visual name="b20_vis"><pose>-0.15 1.9 3.2175 0 0 0</pose><geometry><box><size>0.30 1.2 0.165</size></box></geometry>
+        <material><ambient>0.30 0.30 0.32 1</ambient><diffuse>0.42 0.42 0.44 1</diffuse><specular>0.30 0.30 0.32 1</specular></material></visual>
+    </link>
+
+    <!-- ===================== HANDRAIL (visual only, both flights outer edge) ===================== -->
+    <link name="handrail">
+      <!-- Flight A outer rail (Y=0.02), rising: walking line runs (0,0)->(3.0,1.65),
+           rail offset +0.9m vertically above the pitch line, centered on the run -->
+      <visual name="rail_a_vis"><pose>1.5 0.03 1.725 0 -0.5 0</pose>
+        <geometry><box><size>3.4 0.05 0.05</size></box></geometry>
+        <material><ambient>0.10 0.10 0.11 1</ambient><diffuse>0.16 0.16 0.17 1</diffuse><specular>0.40 0.40 0.42 1</specular></material></visual>
+      <!-- Flight B outer rail (Y=2.48), rising the other way: walking line runs
+           (2.7,1.65)->(-0.3,3.30), rail offset +0.9m vertically above the pitch line -->
+      <visual name="rail_b_vis"><pose>1.2 2.47 3.375 0 0.5 0</pose>
+        <geometry><box><size>3.4 0.05 0.05</size></box></geometry>
+        <material><ambient>0.10 0.10 0.11 1</ambient><diffuse>0.16 0.16 0.17 1</diffuse><specular>0.40 0.40 0.42 1</specular></material></visual>
+    </link>
+  </model>
+</sdf>

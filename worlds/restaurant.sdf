@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="restaurant">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <!-- Ground Floor Assembly -->
+    <include>
+      <name>ground_floor_inst</name>
+      <uri>model://ground_floor</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- First Floor Assembly -->
+    <include>
+      <name>first_floor_inst</name>
+      <uri>model://first_floor</uri>
+      <pose>0 0 3.5 0 0 0</pose>
+    </include>
+
+    <!-- Lift Assembly (dynamic, plugin-driven elevator) - included at the top level,
+         NOT nested inside ground_floor_inst, so it stays non-static and the
+         lift_controller_plugin can find its joints correctly. Pose matches where
+         it used to sit relative to ground_floor's frame (ground_floor_inst itself
+         is at the world origin, so this is the same absolute placement). -->
+    <include>
+      <name>lift_assembly_inst</name>
+      <uri>model://_fixtures/lift_assembly</uri>
+      <pose>-10 5.5 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--
+  column | Module A - Structural Components
+  0.30 x 0.30 m footprint, 3.0 m tall. Bottom at z=0. Origin at footprint centre, floor level.
+-->
+<sdf version="1.6">
+  <model name="column">
+    <static>true</static>
+    <link name="column_link">
+      <pose>0 0 1.5 0 0 0</pose>
+      <collision name="column_col">
+        <geometry><box><size>0.30 0.30 3.0</size></box></geometry>
+      </collision>
+      <visual name="column_vis">
+        <geometry><box><size>0.30 0.30 3.0</size></box></geometry>
+        <material>
+          <!-- Premium charcoal cladding -->
+          <ambient>0.18 0.18 0.20 1</ambient>
+          <diffuse>0.25 0.25 0.27 1</diffuse>
+          <specular>0.30 0.30 0.32 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

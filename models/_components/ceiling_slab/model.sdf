@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<!--
+  ceiling_slab | Module A - Structural Components
+  4.0 x 4.0 m ceiling tile, 0.15 m thick. Bottom face at z = 3.0 (interior height).
+  Include with a pose whose z = 3.075 (so bottom sits at 3.0). Origin at tile centre.
+  R5: collision optional; kept as box for sensor completeness (robots won't hit it).
+-->
+<sdf version="1.6">
+  <model name="ceiling_slab">
+    <static>true</static>
+    <link name="ceiling_link">
+      <collision name="ceiling_col">
+        <geometry><box><size>4.0 4.0 0.15</size></box></geometry>
+      </collision>
+      <visual name="ceiling_vis">
+        <geometry><box><size>4.0 4.0 0.15</size></box></geometry>
+        <material>
+          <!-- Clean premium white ceiling, slight sheen -->
+          <ambient>0.90 0.90 0.90 1</ambient>
+          <diffuse>0.95 0.95 0.95 1</diffuse>
+          <specular>0.08 0.08 0.08 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--
+  kitchen_counter | Module B - Furniture
+  2.0 (X) x 0.7 (Y) m, 0.9 m tall stainless prep counter. Origin: floor centre.
+  R5: single box collision.
+-->
+<sdf version="1.6">
+  <model name="kitchen_counter">
+    <static>true</static>
+    <link name="counter_link">
+      <collision name="counter_col">
+        <pose>0 0 0.45 0 0 0</pose>
+        <geometry><box><size>2.0 0.7 0.9</size></box></geometry>
+      </collision>
+      <!-- Cabinet body -->
+      <visual name="body_vis">
+        <pose>0 0 0.43 0 0 0</pose>
+        <geometry><box><size>2.0 0.7 0.86</size></box></geometry>
+        <material><ambient>0.60 0.61 0.63 1</ambient><diffuse>0.72 0.73 0.75 1</diffuse><specular>0.55 0.55 0.57 1</specular></material>
+      </visual>
+      <!-- Stainless top -->
+      <visual name="top_vis">
+        <pose>0 0 0.89 0 0 0</pose>
+        <geometry><box><size>2.05 0.75 0.04</size></box></geometry>
+        <material><ambient>0.68 0.69 0.71 1</ambient><diffuse>0.80 0.81 0.83 1</diffuse><specular>0.70 0.70 0.72 1</specular></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

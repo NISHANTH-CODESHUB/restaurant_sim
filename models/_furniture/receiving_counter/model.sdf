@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<!--
+  receiving_counter | Module B - Furniture  (R3 APPROVED)
+  Physical half-wall barrier between the service pathway and each kitchen.
+  1.6 (X) x 0.6 (Y) m, 1.0 m tall -> blocks robot entry into the kitchen while
+  allowing staff to hand food across the top.
+  Origin: floor centre. The counter is meant to sit IN the kitchen doorway/opening.
+  'pickup_frame': named frame ~0.6 m in front (robot-side) = future Nav2 goal pose.
+  R5: single box collision.
+-->
+<sdf version="1.6">
+  <model name="receiving_counter">
+    <static>true</static>
+
+    <link name="counter_link">
+      <!-- R3 barrier collision (solid, robot-blocking) -->
+      <collision name="barrier_col">
+        <pose>0 0 0.50 0 0 0</pose>
+        <geometry><box><size>1.6 0.6 1.0</size></box></geometry>
+        <surface><friction><ode><mu>0.8</mu><mu2>0.8</mu2></ode></friction></surface>
+      </collision>
+
+      <!-- Body -->
+      <visual name="body_vis">
+        <pose>0 0 0.48 0 0 0</pose>
+        <geometry><box><size>1.6 0.6 0.96</size></box></geometry>
+        <material><ambient>0.55 0.56 0.58 1</ambient><diffuse>0.66 0.67 0.69 1</diffuse><specular>0.45 0.45 0.47 1</specular></material>
+      </visual>
+      <!-- Stainless handoff top -->
+      <visual name="top_vis">
+        <pose>0 0 0.99 0 0 0</pose>
+        <geometry><box><size>1.65 0.65 0.05</size></box></geometry>
+        <material><ambient>0.68 0.69 0.71 1</ambient><diffuse>0.80 0.81 0.83 1</diffuse><specular>0.70 0.70 0.72 1</specular></material>
+      </visual>
+      <!-- Robot-side status LED strip (emissive) -->
+      <visual name="led_vis">
+        <pose>0 -0.31 0.85 0 0 0</pose>
+        <geometry><box><size>1.5 0.02 0.03</size></box></geometry>
+        <material>
+          <ambient>0.05 0.35 0.10 1</ambient><diffuse>0.10 0.55 0.15 1</diffuse>
+          <emissive>0.10 0.50 0.15 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <!-- FUTURE Nav2 pickup goal: robot approaches from -Y (pathway side) -->
+    <frame name="pickup_frame">
+      <pose>0 -0.9 0 0 0 1.5708</pose>
+    </frame>
+  </model>
+</sdf>

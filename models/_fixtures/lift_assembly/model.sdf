@@ -1,0 +1,287 @@
+<?xml version="1.0" ?>
+<!--
+  lift_assembly | Module C - Dynamic Fixture
+  Combines the (formerly static) lift_shaft + lift_cabin into ONE physics model so the
+  cabin can move vertically and doors can slide open/closed via real joints, driven by
+  the lift_controller_plugin (see src/lift_controller_plugin.cpp).
+
+  Coordinate frame matches the original lift_shaft/lift_cabin models exactly, so this
+  drop-in replaces both at the same include pose.
+
+  Kinematic tree:
+    world -> shaft_link (fixed joint, doesn't move)
+               |-> ground_door_left / ground_door_right   (prismatic slide, x-axis)
+               |-> first_door_left  / first_door_right    (prismatic slide, x-axis)
+               |-> cabin_link                              (prismatic, z-axis, 0 -> 3.5 m)
+                     |-> cabin_door_left / cabin_door_right (prismatic slide, x-axis)
+
+  Ground floor door opening: z 0.0 -> 2.1 (center 1.05)
+  First floor door opening:  z 3.5 -> 5.6 (center 4.55)
+  Clear opening width: 1.7 m -> two 0.85 m panels meeting at center when closed.
+-->
+<sdf version="1.6">
+  <model name="lift_assembly">
+    <static>false</static>
+
+    <!-- ============================================================= -->
+    <!-- SHAFT (fixed to world, does not move - identical geometry to the old static lift_shaft) -->
+    <!-- ============================================================= -->
+    <link name="shaft_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>2000</mass>
+        <inertia><ixx>8973.3</ixx><ixy>0</ixy><ixz>0</ixz><iyy>8973.3</iyy><iyz>0</iyz><izz>1613.3</izz></inertia>
+      </inertial>
+
+      <!-- Left Wall (Solid) -->
+      <collision name="left_wall_collision">
+        <pose>-1.05 0 3.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.2 7.0</size></box></geometry>
+      </collision>
+      <visual name="left_wall_visual">
+        <pose>-1.05 0 3.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.2 7.0</size></box></geometry>
+        <material><ambient>0.25 0.25 0.28 1</ambient><diffuse>0.25 0.25 0.28 1</diffuse><specular>0.4 0.4 0.4 1</specular></material>
+      </visual>
+
+      <!-- Right Wall (Solid) -->
+      <collision name="right_wall_collision">
+        <pose>1.05 0 3.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.2 7.0</size></box></geometry>
+      </collision>
+      <visual name="right_wall_visual">
+        <pose>1.05 0 3.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.2 7.0</size></box></geometry>
+        <material><ambient>0.25 0.25 0.28 1</ambient><diffuse>0.25 0.25 0.28 1</diffuse><specular>0.4 0.4 0.4 1</specular></material>
+      </visual>
+
+      <!-- Back Wall (Solid) -->
+      <collision name="back_wall_collision">
+        <pose>0 -1.05 3.5 0 0 0</pose>
+        <geometry><box><size>2.0 0.1 7.0</size></box></geometry>
+      </collision>
+      <visual name="back_wall_visual">
+        <pose>0 -1.05 3.5 0 0 0</pose>
+        <geometry><box><size>2.0 0.1 7.0</size></box></geometry>
+        <material><ambient>0.25 0.25 0.28 1</ambient><diffuse>0.25 0.25 0.28 1</diffuse><specular>0.4 0.4 0.4 1</specular></material>
+      </visual>
+
+      <!-- Front Wall posts + beams (with door openings) -->
+      <collision name="front_left_post_collision">
+        <pose>-0.95 1.05 3.5 0 0 0</pose>
+        <geometry><box><size>0.2 0.1 7.0</size></box></geometry>
+      </collision>
+      <visual name="front_left_post_visual">
+        <pose>-0.95 1.05 3.5 0 0 0</pose>
+        <geometry><box><size>0.2 0.1 7.0</size></box></geometry>
+        <material><ambient>0.25 0.25 0.28 1</ambient><diffuse>0.25 0.25 0.28 1</diffuse></material>
+      </visual>
+
+      <collision name="front_right_post_collision">
+        <pose>0.95 1.05 3.5 0 0 0</pose>
+        <geometry><box><size>0.2 0.1 7.0</size></box></geometry>
+      </collision>
+      <visual name="front_right_post_visual">
+        <pose>0.95 1.05 3.5 0 0 0</pose>
+        <geometry><box><size>0.2 0.1 7.0</size></box></geometry>
+        <material><ambient>0.25 0.25 0.28 1</ambient><diffuse>0.25 0.25 0.28 1</diffuse></material>
+      </visual>
+
+      <collision name="front_mid_beam_collision">
+        <pose>0 1.05 2.8 0 0 0</pose>
+        <geometry><box><size>1.7 0.1 1.4</size></box></geometry>
+      </collision>
+      <visual name="front_mid_beam_visual">
+        <pose>0 1.05 2.8 0 0 0</pose>
+        <geometry><box><size>1.7 0.1 1.4</size></box></geometry>
+        <material><ambient>0.25 0.25 0.28 1</ambient><diffuse>0.25 0.25 0.28 1</diffuse></material>
+      </visual>
+
+      <collision name="front_top_beam_collision">
+        <pose>0 1.05 6.3 0 0 0</pose>
+        <geometry><box><size>1.7 0.1 1.4</size></box></geometry>
+      </collision>
+      <visual name="front_top_beam_visual">
+        <pose>0 1.05 6.3 0 0 0</pose>
+        <geometry><box><size>1.7 0.1 1.4</size></box></geometry>
+        <material><ambient>0.25 0.25 0.28 1</ambient><diffuse>0.25 0.25 0.28 1</diffuse></material>
+      </visual>
+    </link>
+
+    <joint name="shaft_fixed_joint" type="fixed">
+      <parent>world</parent>
+      <child>shaft_link</child>
+    </joint>
+
+    <!-- ============================================================= -->
+    <!-- GROUND FLOOR LANDING DOORS (slide open/closed, do not move vertically) -->
+    <!-- ============================================================= -->
+    <link name="ground_door_left">
+      <pose>-0.425 1.0 1.05 0 0 0</pose>
+      <inertial><mass>15</mass><inertia><ixx>5.517</ixx><ixy>0</ixy><ixz>0</ixz><iyy>6.416</iyy><iyz>0</iyz><izz>0.908</izz></inertia></inertial>
+      <collision name="col"><geometry><box><size>0.85 0.06 2.1</size></box></geometry></collision>
+      <visual name="vis">
+        <geometry><box><size>0.85 0.06 2.1</size></box></geometry>
+        <material><ambient>0.55 0.56 0.58 1</ambient><diffuse>0.62 0.63 0.65 1</diffuse><specular>0.75 0.75 0.77 1</specular></material>
+      </visual>
+    </link>
+    <joint name="ground_door_left_joint" type="prismatic">
+      <parent>shaft_link</parent><child>ground_door_left</child>
+      <axis><xyz>-1 0 0</xyz><limit><lower>0</lower><upper>0.85</upper><effort>50</effort><velocity>1.0</velocity></limit></axis>
+    </joint>
+
+    <link name="ground_door_right">
+      <pose>0.425 1.0 1.05 0 0 0</pose>
+      <inertial><mass>15</mass><inertia><ixx>5.517</ixx><ixy>0</ixy><ixz>0</ixz><iyy>6.416</iyy><iyz>0</iyz><izz>0.908</izz></inertia></inertial>
+      <collision name="col"><geometry><box><size>0.85 0.06 2.1</size></box></geometry></collision>
+      <visual name="vis">
+        <geometry><box><size>0.85 0.06 2.1</size></box></geometry>
+        <material><ambient>0.55 0.56 0.58 1</ambient><diffuse>0.62 0.63 0.65 1</diffuse><specular>0.75 0.75 0.77 1</specular></material>
+      </visual>
+    </link>
+    <joint name="ground_door_right_joint" type="prismatic">
+      <parent>shaft_link</parent><child>ground_door_right</child>
+      <axis><xyz>1 0 0</xyz><limit><lower>0</lower><upper>0.85</upper><effort>50</effort><velocity>1.0</velocity></limit></axis>
+    </joint>
+
+    <!-- ============================================================= -->
+    <!-- FIRST FLOOR LANDING DOORS -->
+    <!-- ============================================================= -->
+    <link name="first_door_left">
+      <pose>-0.425 1.0 4.55 0 0 0</pose>
+      <inertial><mass>15</mass><inertia><ixx>5.517</ixx><ixy>0</ixy><ixz>0</ixz><iyy>6.416</iyy><iyz>0</iyz><izz>0.908</izz></inertia></inertial>
+      <collision name="col"><geometry><box><size>0.85 0.06 2.1</size></box></geometry></collision>
+      <visual name="vis">
+        <geometry><box><size>0.85 0.06 2.1</size></box></geometry>
+        <material><ambient>0.55 0.56 0.58 1</ambient><diffuse>0.62 0.63 0.65 1</diffuse><specular>0.75 0.75 0.77 1</specular></material>
+      </visual>
+    </link>
+    <joint name="first_door_left_joint" type="prismatic">
+      <parent>shaft_link</parent><child>first_door_left</child>
+      <axis><xyz>-1 0 0</xyz><limit><lower>0</lower><upper>0.85</upper><effort>50</effort><velocity>1.0</velocity></limit></axis>
+    </joint>
+
+    <link name="first_door_right">
+      <pose>0.425 1.0 4.55 0 0 0</pose>
+      <inertial><mass>15</mass><inertia><ixx>5.517</ixx><ixy>0</ixy><ixz>0</ixz><iyy>6.416</iyy><iyz>0</iyz><izz>0.908</izz></inertia></inertial>
+      <collision name="col"><geometry><box><size>0.85 0.06 2.1</size></box></geometry></collision>
+      <visual name="vis">
+        <geometry><box><size>0.85 0.06 2.1</size></box></geometry>
+        <material><ambient>0.55 0.56 0.58 1</ambient><diffuse>0.62 0.63 0.65 1</diffuse><specular>0.75 0.75 0.77 1</specular></material>
+      </visual>
+    </link>
+    <joint name="first_door_right_joint" type="prismatic">
+      <parent>shaft_link</parent><child>first_door_right</child>
+      <axis><xyz>1 0 0</xyz><limit><lower>0</lower><upper>0.85</upper><effort>50</effort><velocity>1.0</velocity></limit></axis>
+    </joint>
+
+    <!-- ============================================================= -->
+    <!-- CABIN (moves vertically between ground and first floor) -->
+    <!-- ============================================================= -->
+    <link name="cabin_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>300</mass>
+        <inertia><ixx>219.06</ixx><ixy>0</ixy><ixz>0</ixz><iyy>219.06</iyy><iyz>0</iyz><izz>162</izz></inertia>
+      </inertial>
+
+      <collision name="floor_collision">
+        <pose>0 0 0.025 0 0 0</pose>
+        <geometry><box><size>1.8 1.8 0.05</size></box></geometry>
+      </collision>
+      <visual name="floor_visual">
+        <pose>0 0 0.025 0 0 0</pose>
+        <geometry><box><size>1.8 1.8 0.05</size></box></geometry>
+        <material><ambient>0.2 0.2 0.22 1</ambient><diffuse>0.2 0.2 0.22 1</diffuse></material>
+      </visual>
+
+      <collision name="left_wall_collision">
+        <pose>-0.875 0 1.2 0 0 0</pose>
+        <geometry><box><size>0.05 1.8 2.3</size></box></geometry>
+      </collision>
+      <visual name="left_wall_visual">
+        <pose>-0.875 0 1.2 0 0 0</pose>
+        <geometry><box><size>0.05 1.8 2.3</size></box></geometry>
+        <material><ambient>0.7 0.7 0.72 1</ambient><diffuse>0.7 0.7 0.72 1</diffuse><specular>0.7 0.7 0.72 1</specular></material>
+      </visual>
+
+      <collision name="right_wall_collision">
+        <pose>0.875 0 1.2 0 0 0</pose>
+        <geometry><box><size>0.05 1.8 2.3</size></box></geometry>
+      </collision>
+      <visual name="right_wall_visual">
+        <pose>0.875 0 1.2 0 0 0</pose>
+        <geometry><box><size>0.05 1.8 2.3</size></box></geometry>
+        <material><ambient>0.7 0.7 0.72 1</ambient><diffuse>0.7 0.7 0.72 1</diffuse><specular>0.7 0.7 0.72 1</specular></material>
+      </visual>
+
+      <collision name="back_wall_collision">
+        <pose>0 -0.875 1.2 0 0 0</pose>
+        <geometry><box><size>1.8 0.05 2.3</size></box></geometry>
+      </collision>
+      <visual name="back_wall_visual">
+        <pose>0 -0.875 1.2 0 0 0</pose>
+        <geometry><box><size>1.8 0.05 2.3</size></box></geometry>
+        <material><ambient>0.7 0.7 0.72 1</ambient><diffuse>0.7 0.7 0.72 1</diffuse><specular>0.7 0.7 0.72 1</specular></material>
+      </visual>
+
+      <collision name="roof_collision">
+        <pose>0 0 2.375 0 0 0</pose>
+        <geometry><box><size>1.8 1.8 0.05</size></box></geometry>
+      </collision>
+      <visual name="roof_visual">
+        <pose>0 0 2.375 0 0 0</pose>
+        <geometry><box><size>1.8 1.8 0.05</size></box></geometry>
+        <material><ambient>0.8 0.8 0.82 1</ambient><diffuse>0.8 0.8 0.82 1</diffuse></material>
+      </visual>
+
+      <visual name="light_panel">
+        <pose>0 0 2.34 0 0 0</pose>
+        <geometry><box><size>0.5 0.5 0.02</size></box></geometry>
+        <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse><emissive>1.0 1.0 1.0 1</emissive></material>
+      </visual>
+    </link>
+
+    <joint name="lift_vertical_joint" type="prismatic">
+      <parent>shaft_link</parent><child>cabin_link</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>0</lower><upper>3.5</upper><effort>5000</effort><velocity>1.0</velocity></limit></axis>
+    </joint>
+
+    <!-- ============================================================= -->
+    <!-- CABIN DOORS (move vertically WITH the cabin, slide open/closed on their own axis) -->
+    <!-- ============================================================= -->
+    <link name="cabin_door_left">
+      <pose>-0.425 0.85 1.05 0 0 0</pose>
+      <inertial><mass>15</mass><inertia><ixx>5.517</ixx><ixy>0</ixy><ixz>0</ixz><iyy>6.416</iyy><iyz>0</iyz><izz>0.908</izz></inertia></inertial>
+      <collision name="col"><geometry><box><size>0.85 0.06 2.1</size></box></geometry></collision>
+      <visual name="vis">
+        <geometry><box><size>0.85 0.06 2.1</size></box></geometry>
+        <material><ambient>0.65 0.65 0.68 1</ambient><diffuse>0.72 0.72 0.75 1</diffuse><specular>0.8 0.8 0.82 1</specular></material>
+      </visual>
+    </link>
+    <joint name="cabin_door_left_joint" type="prismatic">
+      <parent>cabin_link</parent><child>cabin_door_left</child>
+      <axis><xyz>-1 0 0</xyz><limit><lower>0</lower><upper>0.85</upper><effort>50</effort><velocity>1.0</velocity></limit></axis>
+    </joint>
+
+    <link name="cabin_door_right">
+      <pose>0.425 0.85 1.05 0 0 0</pose>
+      <inertial><mass>15</mass><inertia><ixx>5.517</ixx><ixy>0</ixy><ixz>0</ixz><iyy>6.416</iyy><iyz>0</iyz><izz>0.908</izz></inertia></inertial>
+      <collision name="col"><geometry><box><size>0.85 0.06 2.1</size></box></geometry></collision>
+      <visual name="vis">
+        <geometry><box><size>0.85 0.06 2.1</size></box></geometry>
+        <material><ambient>0.65 0.65 0.68 1</ambient><diffuse>0.72 0.72 0.75 1</diffuse><specular>0.8 0.8 0.82 1</specular></material>
+      </visual>
+    </link>
+    <joint name="cabin_door_right_joint" type="prismatic">
+      <parent>cabin_link</parent><child>cabin_door_right</child>
+      <axis><xyz>1 0 0</xyz><limit><lower>0</lower><upper>0.85</upper><effort>50</effort><velocity>1.0</velocity></limit></axis>
+    </joint>
+
+    <!-- ============================================================= -->
+    <!-- CONTROLLER PLUGIN: drives the full cycle (see src/lift_controller_plugin.cpp) -->
+    <!-- ============================================================= -->
+    <plugin name="lift_controller" filename="liblift_controller_plugin.so"/>
+
+  </model>
+</sdf>

@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="lift_shaft">
+    <static>true</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <!-- Left Wall (Solid) -->
+      <collision name="left_wall_collision">
+        <pose>-1.05 0 3.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.2 7.0</size></box></geometry>
+      </collision>
+      <visual name="left_wall_visual">
+        <pose>-1.05 0 3.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.2 7.0</size></box></geometry>
+        <material>
+          <ambient>0.25 0.25 0.28 1</ambient>
+          <diffuse>0.25 0.25 0.28 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+
+      <!-- Right Wall (Solid) -->
+      <collision name="right_wall_collision">
+        <pose>1.05 0 3.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.2 7.0</size></box></geometry>
+      </collision>
+      <visual name="right_wall_visual">
+        <pose>1.05 0 3.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.2 7.0</size></box></geometry>
+        <material>
+          <ambient>0.25 0.25 0.28 1</ambient>
+          <diffuse>0.25 0.25 0.28 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+
+      <!-- Back Wall (Solid) -->
+      <collision name="back_wall_collision">
+        <pose>0 -1.05 3.5 0 0 0</pose>
+        <geometry><box><size>2.0 0.1 7.0</size></box></geometry>
+      </collision>
+      <visual name="back_wall_visual">
+        <pose>0 -1.05 3.5 0 0 0</pose>
+        <geometry><box><size>2.0 0.1 7.0</size></box></geometry>
+        <material>
+          <ambient>0.25 0.25 0.28 1</ambient>
+          <diffuse>0.25 0.25 0.28 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+
+      <!-- Front Wall (with door openings) -->
+      <!-- Left corner post -->
+      <collision name="front_left_post_collision">
+        <pose>-0.95 1.05 3.5 0 0 0</pose>
+        <geometry><box><size>0.2 0.1 7.0</size></box></geometry>
+      </collision>
+      <visual name="front_left_post_visual">
+        <pose>-0.95 1.05 3.5 0 0 0</pose>
+        <geometry><box><size>0.2 0.1 7.0</size></box></geometry>
+        <material>
+          <ambient>0.25 0.25 0.28 1</ambient>
+          <diffuse>0.25 0.25 0.28 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Right corner post -->
+      <collision name="front_right_post_collision">
+        <pose>0.95 1.05 3.5 0 0 0</pose>
+        <geometry><box><size>0.2 0.1 7.0</size></box></geometry>
+      </collision>
+      <visual name="front_right_post_visual">
+        <pose>0.95 1.05 3.5 0 0 0</pose>
+        <geometry><box><size>0.2 0.1 7.0</size></box></geometry>
+        <material>
+          <ambient>0.25 0.25 0.28 1</ambient>
+          <diffuse>0.25 0.25 0.28 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Middle beam (separating ground floor and first floor openings) -->
+      <collision name="front_mid_beam_collision">
+        <pose>0 1.05 2.8 0 0 0</pose>
+        <geometry><box><size>1.7 0.1 1.4</size></box></geometry>
+      </collision>
+      <visual name="front_mid_beam_visual">
+        <pose>0 1.05 2.8 0 0 0</pose>
+        <geometry><box><size>1.7 0.1 1.4</size></box></geometry>
+        <material>
+          <ambient>0.25 0.25 0.28 1</ambient>
+          <diffuse>0.25 0.25 0.28 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Top beam (above first floor opening) -->
+      <collision name="front_top_beam_collision">
+        <pose>0 1.05 6.3 0 0 0</pose>
+        <geometry><box><size>1.7 0.1 1.4</size></box></geometry>
+      </collision>
+      <visual name="front_top_beam_visual">
+        <pose>0 1.05 6.3 0 0 0</pose>
+        <geometry><box><size>1.7 0.1 1.4</size></box></geometry>
+        <material>
+          <ambient>0.25 0.25 0.28 1</ambient>
+          <diffuse>0.25 0.25 0.28 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

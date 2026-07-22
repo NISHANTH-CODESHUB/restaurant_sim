@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--
+  wall_segment  |  Module A - Structural Components
+  Canonical 1.0 m (X) x 0.15 m (Y) x 3.0 m (Z) interior partition.
+  Origin: center of the wall footprint at floor level (bottom face at z=0).
+  Reuse: place N instances end-to-end along X (or rotate 90deg for Y runs).
+  Collision: single box (R5 optimized) - cheapest possible for ODE.
+-->
+<sdf version="1.6">
+  <model name="wall_segment">
+    <static>true</static>
+
+    <link name="wall_link">
+      <!-- Lift the box so its bottom sits on the floor (half of 3.0 m). -->
+      <pose>0 0 1.5 0 0 0</pose>
+
+      <collision name="wall_collision">
+        <geometry>
+          <box>
+            <size>1.0 0.15 3.0</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e7</kp>
+              <kd>1.0</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name="wall_visual">
+        <geometry>
+          <box>
+            <size>1.0 0.15 3.0</size>
+          </box>
+        </geometry>
+        <material>
+          <!-- Premium warm off-white matte plaster -->
+          <ambient>0.85 0.84 0.80 1</ambient>
+          <diffuse>0.92 0.91 0.87 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!--
+  floor_slab_transparent | Module A - Structural Components
+  Same as floor_slab (4.0 x 4.0 m, 0.30 m thick, walkable top at z = 0),
+  but with a mostly-transparent visual material.
+  Used for the FIRST FLOOR's floor slabs, which double as the GROUND FLOOR's
+  ceiling -- making it transparent lets you view the ground floor from above.
+  Collision is kept solid so the first floor still supports weight/navigation normally.
+-->
+<sdf version="1.6">
+  <model name="floor_slab_transparent">
+    <static>true</static>
+    <link name="floor_link">
+      <pose>0 0 -0.15 0 0 0</pose>
+      <collision name="floor_col">
+        <geometry><box><size>4.0 4.0 0.30</size></box></geometry>
+        <surface>
+          <friction><ode><mu>0.9</mu><mu2>0.9</mu2></ode></friction>
+        </surface>
+      </collision>
+      <visual name="floor_vis">
+        <geometry><box><size>4.0 4.0 0.30</size></box></geometry>
+        <material>
+          <ambient>0.55 0.55 0.57 1</ambient>
+          <diffuse>0.72 0.72 0.74 1</diffuse>
+          <specular>0.55 0.55 0.57 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        <transparency>0.75</transparency>
+      </visual>
+    </link>
+  </model>
+</sdf>

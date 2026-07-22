@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!--
+  floor_slab | Module A - Structural Components
+  4.0 x 4.0 m tile, 0.30 m thick. Walkable surface (top face) at z = 0.
+  Body occupies z = -0.30 .. 0.0 so robots drive on the z=0 plane (flush, no lip - R5/nav safe).
+  Premium polished light-grey porcelain look (high specular).
+-->
+<sdf version="1.6">
+  <model name="floor_slab">
+    <static>true</static>
+    <link name="floor_link">
+      <pose>0 0 -0.15 0 0 0</pose>
+      <collision name="floor_col">
+        <geometry><box><size>4.0 4.0 0.30</size></box></geometry>
+        <surface>
+          <friction><ode><mu>0.9</mu><mu2>0.9</mu2></ode></friction>
+        </surface>
+      </collision>
+      <visual name="floor_vis">
+        <geometry><box><size>4.0 4.0 0.30</size></box></geometry>
+        <material>
+          <!-- Polished porcelain: light grey, strong specular sheen -->
+          <ambient>0.55 0.55 0.57 1</ambient>
+          <diffuse>0.72 0.72 0.74 1</diffuse>
+          <specular>0.55 0.55 0.57 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

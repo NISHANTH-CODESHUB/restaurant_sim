@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="lift_cabin">
+    <static>true</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <!-- Floor Slab -->
+      <collision name="floor_collision">
+        <pose>0 0 0.025 0 0 0</pose>
+        <geometry><box><size>1.8 1.8 0.05</size></box></geometry>
+      </collision>
+      <visual name="floor_visual">
+        <pose>0 0 0.025 0 0 0</pose>
+        <geometry><box><size>1.8 1.8 0.05</size></box></geometry>
+        <material>
+          <ambient>0.2 0.2 0.22 1</ambient>
+          <diffuse>0.2 0.2 0.22 1</diffuse>
+        </material>
+      </visual>
+      <!-- Left Wall -->
+      <collision name="left_wall_collision">
+        <pose>-0.875 0 1.2 0 0 0</pose>
+        <geometry><box><size>0.05 1.8 2.3</size></box></geometry>
+      </collision>
+      <visual name="left_wall_visual">
+        <pose>-0.875 0 1.2 0 0 0</pose>
+        <geometry><box><size>0.05 1.8 2.3</size></box></geometry>
+        <material>
+          <ambient>0.7 0.7 0.72 1</ambient>
+          <diffuse>0.7 0.7 0.72 1</diffuse>
+          <specular>0.7 0.7 0.72 1</specular>
+        </material>
+      </visual>
+      <!-- Right Wall -->
+      <collision name="right_wall_collision">
+        <pose>0.875 0 1.2 0 0 0</pose>
+        <geometry><box><size>0.05 1.8 2.3</size></box></geometry>
+      </collision>
+      <visual name="right_wall_visual">
+        <pose>0.875 0 1.2 0 0 0</pose>
+        <geometry><box><size>0.05 1.8 2.3</size></box></geometry>
+        <material>
+          <ambient>0.7 0.7 0.72 1</ambient>
+          <diffuse>0.7 0.7 0.72 1</diffuse>
+          <specular>0.7 0.7 0.72 1</specular>
+        </material>
+      </visual>
+      <!-- Back Wall -->
+      <collision name="back_wall_collision">
+        <pose>0 -0.875 1.2 0 0 0</pose>
+        <geometry><box><size>1.8 0.05 2.3</size></box></geometry>
+      </collision>
+      <visual name="back_wall_visual">
+        <pose>0 -0.875 1.2 0 0 0</pose>
+        <geometry><box><size>1.8 0.05 2.3</size></box></geometry>
+        <material>
+          <ambient>0.7 0.7 0.72 1</ambient>
+          <diffuse>0.7 0.7 0.72 1</diffuse>
+          <specular>0.7 0.7 0.72 1</specular>
+        </material>
+      </visual>
+      <!-- Roof -->
+      <collision name="roof_collision">
+        <pose>0 0 2.375 0 0 0</pose>
+        <geometry><box><size>1.8 1.8 0.05</size></box></geometry>
+      </collision>
+      <visual name="roof_visual">
+        <pose>0 0 2.375 0 0 0</pose>
+        <geometry><box><size>1.8 1.8 0.05</size></box></geometry>
+        <material>
+          <ambient>0.8 0.8 0.82 1</ambient>
+          <diffuse>0.8 0.8 0.82 1</diffuse>
+        </material>
+      </visual>
+      <!-- Small interior ceiling panel light -->
+      <visual name="light_panel">
+        <pose>0 0 2.34 0 0 0</pose>
+        <geometry><box><size>0.5 0.5 0.02</size></box></geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <emissive>1.0 1.0 1.0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

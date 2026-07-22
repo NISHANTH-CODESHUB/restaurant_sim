@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="door_single_wide">
+    <static>true</static>
+    <link name="frame">
+      <pose>0 0 0 0 0 0</pose>
+      <!-- Left Post -->
+      <collision name="left_post_collision">
+        <pose>-0.575 0 1.05 0 0 0</pose>
+        <geometry><box><size>0.05 0.15 2.1</size></box></geometry>
+      </collision>
+      <visual name="left_post_visual">
+        <pose>-0.575 0 1.05 0 0 0</pose>
+        <geometry><box><size>0.05 0.15 2.1</size></box></geometry>
+        <material>
+          <ambient>0.4 0.25 0.13 1</ambient>
+          <diffuse>0.4 0.25 0.13 1</diffuse>
+        </material>
+      </visual>
+      <!-- Right Post -->
+      <collision name="right_post_collision">
+        <pose>0.575 0 1.05 0 0 0</pose>
+        <geometry><box><size>0.05 0.15 2.1</size></box></geometry>
+      </collision>
+      <visual name="right_post_visual">
+        <pose>0.575 0 1.05 0 0 0</pose>
+        <geometry><box><size>0.05 0.15 2.1</size></box></geometry>
+        <material>
+          <ambient>0.4 0.25 0.13 1</ambient>
+          <diffuse>0.4 0.25 0.13 1</diffuse>
+        </material>
+      </visual>
+      <!-- Header -->
+      <collision name="header_collision">
+        <pose>0 0 2.075 0 0 0</pose>
+        <geometry><box><size>1.2 0.15 0.05</size></box></geometry>
+      </collision>
+      <visual name="header_visual">
+        <pose>0 0 2.075 0 0 0</pose>
+        <geometry><box><size>1.2 0.15 0.05</size></box></geometry>
+        <material>
+          <ambient>0.4 0.25 0.13 1</ambient>
+          <diffuse>0.4 0.25 0.13 1</diffuse>
+        </material>
+      </visual>
+      <!-- Open Door Panel (rotated 90 deg, extending along +y) -->
+      <collision name="panel_collision">
+        <pose>-0.53 0.55 1.0 0 0 1.5708</pose>
+        <geometry><box><size>1.1 0.04 2.0</size></box></geometry>
+      </collision>
+      <visual name="panel_visual">
+        <pose>-0.53 0.55 1.0 0 0 1.5708</pose>
+        <geometry><box><size>1.1 0.04 2.0</size></box></geometry>
+        <material>
+          <ambient>0.5 0.3 0.15 1</ambient>
+          <diffuse>0.5 0.3 0.15 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

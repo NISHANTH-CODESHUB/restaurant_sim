@@ -1,0 +1,199 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="ground_floor">
+    <static>true</static>
+    
+    <!-- Floor Slabs (6x4 grid) -->
+    <!-- Row 1 (y = -6) -->
+    <include><name>floor_slab_0_0</name><uri>model://_components/floor_slab</uri><pose>-10 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_1_0</name><uri>model://_components/floor_slab</uri><pose>-6 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_2_0</name><uri>model://_components/floor_slab</uri><pose>-2 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_3_0</name><uri>model://_components/floor_slab</uri><pose>2 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_4_0</name><uri>model://_components/floor_slab</uri><pose>6 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_5_0</name><uri>model://_components/floor_slab</uri><pose>10 -6 0 0 0 0</pose></include>
+
+    <!-- Row 2 (y = -2) -->
+    <include><name>floor_slab_0_1</name><uri>model://_components/floor_slab</uri><pose>-10 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_1_1</name><uri>model://_components/floor_slab</uri><pose>-6 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_2_1</name><uri>model://_components/floor_slab</uri><pose>-2 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_3_1</name><uri>model://_components/floor_slab</uri><pose>2 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_4_1</name><uri>model://_components/floor_slab</uri><pose>6 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_5_1</name><uri>model://_components/floor_slab</uri><pose>10 -2 0 0 0 0</pose></include>
+
+    <!-- Row 3 (y = 2) -->
+    <include><name>floor_slab_0_2</name><uri>model://_components/floor_slab</uri><pose>-10 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_1_2</name><uri>model://_components/floor_slab</uri><pose>-6 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_2_2</name><uri>model://_components/floor_slab</uri><pose>-2 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_3_2</name><uri>model://_components/floor_slab</uri><pose>2 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_4_2</name><uri>model://_components/floor_slab</uri><pose>6 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_5_2</name><uri>model://_components/floor_slab</uri><pose>10 2 0 0 0 0</pose></include>
+
+    <!-- Row 4 (y = 6) -->
+    <include><name>floor_slab_0_3</name><uri>model://_components/floor_slab</uri><pose>-10 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_1_3</name><uri>model://_components/floor_slab</uri><pose>-6 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_2_3</name><uri>model://_components/floor_slab</uri><pose>-2 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_3_3</name><uri>model://_components/floor_slab</uri><pose>2 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_4_3</name><uri>model://_components/floor_slab</uri><pose>6 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_5_3</name><uri>model://_components/floor_slab</uri><pose>10 6 0 0 0 0</pose></include>
+
+    <!-- Exterior Walls -->
+    <!-- South Facade (y = -8) -->
+    <include><name>ext_wall_s0</name><uri>model://_components/wall_exterior</uri><pose>-10 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s1</name><uri>model://_components/window_standard</uri><pose>-6 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s2</name><uri>model://_components/door_double</uri><pose>-2 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s3</name><uri>model://_components/window_standard</uri><pose>2 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s4</name><uri>model://_components/wall_exterior</uri><pose>6 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s5</name><uri>model://_components/wall_exterior</uri><pose>10 -8 0 0 0 0</pose></include>
+
+    <!-- North Facade (y = 8) -->
+    <include><name>ext_wall_n0</name><uri>model://_components/wall_exterior</uri><pose>-10 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n1</name><uri>model://_components/window_standard</uri><pose>-6 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n2</name><uri>model://_components/window_standard</uri><pose>-2 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n3</name><uri>model://_components/window_standard</uri><pose>2 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n4</name><uri>model://_components/wall_exterior</uri><pose>6 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n5</name><uri>model://_components/wall_exterior</uri><pose>10 8 0 0 0 3.14159</pose></include>
+
+    <!-- West Facade (x = -12) -->
+    <include><name>ext_wall_w0</name><uri>model://_components/wall_exterior</uri><pose>-12 -6 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_w1</name><uri>model://_components/wall_exterior</uri><pose>-12 -2 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_w2</name><uri>model://_components/wall_exterior</uri><pose>-12 2 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_w3</name><uri>model://_components/wall_exterior</uri><pose>-12 6 0 0 0 1.5708</pose></include>
+
+    <!-- East Facade (x = 12) -->
+    <include><name>ext_wall_e0</name><uri>model://_components/wall_exterior</uri><pose>12 -6 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_e1</name><uri>model://_components/wall_exterior</uri><pose>12 -2 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_e2</name><uri>model://_components/wall_exterior</uri><pose>12 2 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_e3</name><uri>model://_components/wall_exterior</uri><pose>12 6 0 0 0 1.5708</pose></include>
+
+    <!-- Pillars / Columns -->
+    <include><name>column_0</name><uri>model://_components/column</uri><pose>-6 -4 0 0 0 0</pose></include>
+    <include><name>column_1</name><uri>model://_components/column</uri><pose>-2 -4 0 0 0 0</pose></include>
+    <include><name>column_2</name><uri>model://_components/column</uri><pose>2 -4 0 0 0 0</pose></include>
+    <include><name>column_3</name><uri>model://_components/column</uri><pose>-6 4 0 0 0 0</pose></include>
+    <include><name>column_4</name><uri>model://_components/column</uri><pose>-2 4 0 0 0 0</pose></include>
+    <include><name>column_5</name><uri>model://_components/column</uri><pose>2 4 0 0 0 0</pose></include>
+
+    <!-- Staircase & Lift (Back-Left Area) -->
+    <include><name>stairs</name><uri>model://_fixtures/staircase</uri><pose>-10 0 0 0 0 1.5708</pose></include>
+    <!-- lift_assembly intentionally NOT included here: it is a dynamic (non-static)
+         model with a controller plugin, and nesting it inside this static composite
+         model would (a) force it static too, since nested models inherit the parent's
+         staticness in Gazebo classic, and (b) break the plugin's joint lookups, since
+         nested-model plugins load against the outer model with scoped joint names.
+         It is included as a top-level sibling model in worlds/restaurant.sdf instead,
+         at the same absolute world pose (-10 5.5 0) it would have had here. -->
+
+    <!-- Kitchen Partition Wall (x = 5.0) and Gaps for Counters / Doors -->
+    <include><name>kitchen_partition_n</name><uri>model://_components/wall_segment_4m</uri><pose>5.0 7.0 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_partition_mid1</name><uri>model://_components/wall_segment</uri><pose>5.0 3.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_partition_mid2</name><uri>model://_components/wall_segment</uri><pose>5.0 1.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_partition_mid3</name><uri>model://_components/wall_segment</uri><pose>5.0 -1.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_partition_mid4</name><uri>model://_components/wall_segment</uri><pose>5.0 -3.5 0 0 0 1.5708</pose></include>
+
+    <!-- Kitchen Side Walls (East-West division walls) -->
+    <!-- Kitchen 1 vs Kitchen 2 (y = 2.5) -->
+    <include><name>kitchen_wall_1_2_a</name><uri>model://_components/wall_segment_4m</uri><pose>7.0 2.5 0 0 0 0</pose></include>
+    <include><name>kitchen_wall_1_2_b</name><uri>model://_components/wall_segment_4m</uri><pose>10.0 2.5 0 0 0 0</pose></include>
+    <!-- Kitchen 2 vs Kitchen 3 (y = -2.5) -->
+    <include><name>kitchen_wall_2_3_a</name><uri>model://_components/wall_segment_4m</uri><pose>7.0 -2.5 0 0 0 0</pose></include>
+    <include><name>kitchen_wall_2_3_b</name><uri>model://_components/wall_segment_4m</uri><pose>10.0 -2.5 0 0 0 0</pose></include>
+
+    <!-- Kitchen Entry Doors (placed in partition wall at x = 5.0) -->
+    <include><name>kitchen_door_1</name><uri>model://_components/door_single_wide</uri><pose>5.0 2.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_door_2</name><uri>model://_components/door_single_wide</uri><pose>5.0 -2.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_door_3</name><uri>model://_components/door_single_wide</uri><pose>5.0 -7.0 0 0 0 1.5708</pose></include>
+
+    <!-- Three Receiving Counters (Handoff area) -->
+    <include><name>receiving_counter_1</name><uri>model://_furniture/receiving_counter</uri><pose>5.0 5.0 0 0 0 1.5708</pose></include>
+    <include><name>receiving_counter_2</name><uri>model://_furniture/receiving_counter</uri><pose>5.0 0.0 0 0 0 1.5708</pose></include>
+    <include><name>receiving_counter_3</name><uri>model://_furniture/receiving_counter</uri><pose>5.0 -5.0 0 0 0 1.5708</pose></include>
+
+    <!-- Kitchen Internal Counters -->
+    <!-- Kitchen 1 -->
+    <include><name>k1_counter_1</name><uri>model://_furniture/kitchen_counter</uri><pose>8.5 5.0 0 0 0 0</pose></include>
+    <include><name>k1_counter_2</name><uri>model://_furniture/kitchen_counter</uri><pose>8.5 6.5 0 0 0 0</pose></include>
+    <!-- Kitchen 2 -->
+    <include><name>k2_counter_1</name><uri>model://_furniture/kitchen_counter</uri><pose>8.5 0.5 0 0 0 0</pose></include>
+    <include><name>k2_counter_2</name><uri>model://_furniture/kitchen_counter</uri><pose>8.5 -1.0 0 0 0 0</pose></include>
+    <!-- Kitchen 3 -->
+    <include><name>k3_counter_1</name><uri>model://_furniture/kitchen_counter</uri><pose>8.5 -5.0 0 0 0 0</pose></include>
+    <include><name>k3_counter_2</name><uri>model://_furniture/kitchen_counter</uri><pose>8.5 -6.5 0 0 0 0</pose></include>
+
+    <!-- Dining Hall: 6 Tables and 24 Chairs -->
+    <!-- Table 1 (x = -6, y = 3) -->
+    <include><name>table_1</name><uri>model://_furniture/dining_table_4</uri><pose>-6 3 0 0 0 0</pose></include>
+    <include><name>table_1_chair_n</name><uri>model://_furniture/chair</uri><pose>-6 3.65 0 0 0 -1.5708</pose></include>
+    <include><name>table_1_chair_s</name><uri>model://_furniture/chair</uri><pose>-6 2.35 0 0 0 1.5708</pose></include>
+    <include><name>table_1_chair_e</name><uri>model://_furniture/chair</uri><pose>-5.35 3 0 0 0 3.14159</pose></include>
+    <include><name>table_1_chair_w</name><uri>model://_furniture/chair</uri><pose>-6.65 3 0 0 0 0</pose></include>
+
+    <!-- Table 2 (x = -6, y = -3) -->
+    <include><name>table_2</name><uri>model://_furniture/dining_table_4</uri><pose>-6 -3 0 0 0 0</pose></include>
+    <include><name>table_2_chair_n</name><uri>model://_furniture/chair</uri><pose>-6 -2.35 0 0 0 -1.5708</pose></include>
+    <include><name>table_2_chair_s</name><uri>model://_furniture/chair</uri><pose>-6 -3.65 0 0 0 1.5708</pose></include>
+    <include><name>table_2_chair_e</name><uri>model://_furniture/chair</uri><pose>-5.35 -3 0 0 0 3.14159</pose></include>
+    <include><name>table_2_chair_w</name><uri>model://_furniture/chair</uri><pose>-6.65 -3 0 0 0 0</pose></include>
+
+    <!-- Table 3 (x = -2, y = 3) -->
+    <include><name>table_3</name><uri>model://_furniture/dining_table_4</uri><pose>-2 3 0 0 0 0</pose></include>
+    <include><name>table_3_chair_n</name><uri>model://_furniture/chair</uri><pose>-2 3.65 0 0 0 -1.5708</pose></include>
+    <include><name>table_3_chair_s</name><uri>model://_furniture/chair</uri><pose>-2 2.35 0 0 0 1.5708</pose></include>
+    <include><name>table_3_chair_e</name><uri>model://_furniture/chair</uri><pose>-1.35 3 0 0 0 3.14159</pose></include>
+    <include><name>table_3_chair_w</name><uri>model://_furniture/chair</uri><pose>-2.65 3 0 0 0 0</pose></include>
+
+    <!-- Table 4 (x = -2, y = -3) -->
+    <include><name>table_4</name><uri>model://_furniture/dining_table_4</uri><pose>-2 -3 0 0 0 0</pose></include>
+    <include><name>table_4_chair_n</name><uri>model://_furniture/chair</uri><pose>-2 -2.35 0 0 0 -1.5708</pose></include>
+    <include><name>table_4_chair_s</name><uri>model://_furniture/chair</uri><pose>-2 -3.65 0 0 0 1.5708</pose></include>
+    <include><name>table_4_chair_e</name><uri>model://_furniture/chair</uri><pose>-1.35 -3 0 0 0 3.14159</pose></include>
+    <include><name>table_4_chair_w</name><uri>model://_furniture/chair</uri><pose>-2.65 -3 0 0 0 0</pose></include>
+
+    <!-- Table 5 (x = 2, y = 3) -->
+    <include><name>table_5</name><uri>model://_furniture/dining_table_4</uri><pose>2 3 0 0 0 0</pose></include>
+    <include><name>table_5_chair_n</name><uri>model://_furniture/chair</uri><pose>2 3.65 0 0 0 -1.5708</pose></include>
+    <include><name>table_5_chair_s</name><uri>model://_furniture/chair</uri><pose>2 2.35 0 0 0 1.5708</pose></include>
+    <include><name>table_5_chair_e</name><uri>model://_furniture/chair</uri><pose>2.65 3 0 0 0 3.14159</pose></include>
+    <include><name>table_5_chair_w</name><uri>model://_furniture/chair</uri><pose>1.35 3 0 0 0 0</pose></include>
+
+    <!-- Table 6 (x = 2, y = -3) -->
+    <include><name>table_6</name><uri>model://_furniture/dining_table_4</uri><pose>2 -3 0 0 0 0</pose></include>
+    <include><name>table_6_chair_n</name><uri>model://_furniture/chair</uri><pose>2 -2.35 0 0 0 -1.5708</pose></include>
+    <include><name>table_6_chair_s</name><uri>model://_furniture/chair</uri><pose>2 -3.65 0 0 0 1.5708</pose></include>
+    <include><name>table_6_chair_e</name><uri>model://_furniture/chair</uri><pose>2.65 -3 0 0 0 3.14159</pose></include>
+    <include><name>table_6_chair_w</name><uri>model://_furniture/chair</uri><pose>1.35 -3 0 0 0 0</pose></include>
+
+    <!-- Reception Area (near entrance) -->
+    <include><name>reception_desk</name><uri>model://_furniture/reception_counter</uri><pose>-2 -6 0 0 0 3.14159</pose></include>
+    <include><name>plant_lobby_l</name><uri>model://_furniture/indoor_plant</uri><pose>-3.5 -6 0 0 0 0</pose></include>
+    <include><name>plant_lobby_r</name><uri>model://_furniture/indoor_plant</uri><pose>-0.5 -6 0 0 0 0</pose></include>
+
+    <!-- Charging Station Area (near kitchens / service pathway) -->
+    <include><name>dock_1</name><uri>model://_furniture/charging_dock</uri><pose>1.0 -7.2 0 0 0 1.5708</pose></include>
+    <include><name>dock_2</name><uri>model://_furniture/charging_dock</uri><pose>2.0 -7.2 0 0 0 1.5708</pose></include>
+    <include><name>dock_3</name><uri>model://_furniture/charging_dock</uri><pose>3.0 -7.2 0 0 0 1.5708</pose></include>
+
+    <!-- Ceiling Lights (arranged on ceiling grid at z = 3.4m) -->
+    <include><name>light_c0_0</name><uri>model://_lighting/ceiling_light_panel</uri><pose>-9 -4 3.4 0 0 0</pose></include>
+    <include><name>light_c1_0</name><uri>model://_lighting/ceiling_light_panel</uri><pose>-5 -4 3.4 0 0 0</pose></include>
+    <include><name>light_c2_0</name><uri>model://_lighting/ceiling_light_panel</uri><pose>-1 -4 3.4 0 0 0</pose></include>
+    <include><name>light_c3_0</name><uri>model://_lighting/ceiling_light_panel</uri><pose>3 -4 3.4 0 0 0</pose></include>
+    <include><name>light_c4_0</name><uri>model://_lighting/ceiling_light_panel</uri><pose>7 -4 3.4 0 0 0</pose></include>
+    <include><name>light_c5_0</name><uri>model://_lighting/ceiling_light_panel</uri><pose>11 -4 3.4 0 0 0</pose></include>
+
+    <include><name>light_c0_1</name><uri>model://_lighting/ceiling_light_panel</uri><pose>-9 4 3.4 0 0 0</pose></include>
+    <include><name>light_c1_1</name><uri>model://_lighting/ceiling_light_panel</uri><pose>-5 4 3.4 0 0 0</pose></include>
+    <include><name>light_c2_1</name><uri>model://_lighting/ceiling_light_panel</uri><pose>-1 4 3.4 0 0 0</pose></include>
+    <include><name>light_c3_1</name><uri>model://_lighting/ceiling_light_panel</uri><pose>3 4 3.4 0 0 0</pose></include>
+    <include><name>light_c4_1</name><uri>model://_lighting/ceiling_light_panel</uri><pose>7 4 3.4 0 0 0</pose></include>
+    <include><name>light_c5_1</name><uri>model://_lighting/ceiling_light_panel</uri><pose>11 4 3.4 0 0 0</pose></include>
+
+    <!-- Elegant Pendant Lights over Dining Tables -->
+    <include><name>pendant_light_1</name><uri>model://_lighting/pendant_light</uri><pose>-6 3 3.4 0 0 0</pose></include>
+    <include><name>pendant_light_2</name><uri>model://_lighting/pendant_light</uri><pose>-6 -3 3.4 0 0 0</pose></include>
+    <include><name>pendant_light_3</name><uri>model://_lighting/pendant_light</uri><pose>-2 3 3.4 0 0 0</pose></include>
+    <include><name>pendant_light_4</name><uri>model://_lighting/pendant_light</uri><pose>-2 -3 3.4 0 0 0</pose></include>
+    <include><name>pendant_light_5</name><uri>model://_lighting/pendant_light</uri><pose>2 3 3.4 0 0 0</pose></include>
+    <include><name>pendant_light_6</name><uri>model://_lighting/pendant_light</uri><pose>2 -3 3.4 0 0 0</pose></include>
+
+  </model>
+</sdf>

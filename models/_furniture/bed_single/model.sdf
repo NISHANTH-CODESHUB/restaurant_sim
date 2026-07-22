@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<!--
+  bed_single | Module B - Furniture
+  2.0 (X) x 1.0 (Y) m footprint, headboard at -X end. Origin: floor centre.
+  Replaces dining_table_6 + chairs in first-floor cabins (converted to bedrooms).
+-->
+<sdf version="1.6">
+  <model name="bed_single">
+    <static>true</static>
+
+    <link name="bed_link">
+      <!-- ===== COLLISIONS ===== -->
+      <collision name="frame_col">
+        <pose>0 0 0.15 0 0 0</pose>
+        <geometry><box><size>2.0 1.0 0.3</size></box></geometry>
+      </collision>
+      <collision name="mattress_col">
+        <pose>0 0 0.4 0 0 0</pose>
+        <geometry><box><size>1.9 0.95 0.2</size></box></geometry>
+      </collision>
+      <collision name="headboard_col">
+        <pose>-0.975 0 0.45 0 0 0</pose>
+        <geometry><box><size>0.05 1.0 0.9</size></box></geometry>
+      </collision>
+
+      <!-- ===== VISUALS ===== -->
+      <visual name="frame_vis">
+        <pose>0 0 0.15 0 0 0</pose>
+        <geometry><box><size>2.0 1.0 0.3</size></box></geometry>
+        <material>
+          <ambient>0.28 0.19 0.11 1</ambient>
+          <diffuse>0.42 0.29 0.16 1</diffuse>
+          <specular>0.20 0.15 0.10 1</specular>
+        </material>
+      </visual>
+      <visual name="mattress_vis">
+        <pose>0 0 0.4 0 0 0</pose>
+        <geometry><box><size>1.9 0.95 0.2</size></box></geometry>
+        <material>
+          <ambient>0.85 0.84 0.80 1</ambient>
+          <diffuse>0.92 0.91 0.87 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+      </visual>
+      <visual name="headboard_vis">
+        <pose>-0.975 0 0.45 0 0 0</pose>
+        <geometry><box><size>0.05 1.0 0.9</size></box></geometry>
+        <material>
+          <ambient>0.28 0.19 0.11 1</ambient>
+          <diffuse>0.42 0.29 0.16 1</diffuse>
+          <specular>0.20 0.15 0.10 1</specular>
+        </material>
+      </visual>
+      <!-- Pillow -->
+      <visual name="pillow_vis">
+        <pose>-0.65 0 0.53 0 0 0</pose>
+        <geometry><box><size>0.5 0.75 0.12</size></box></geometry>
+        <material>
+          <ambient>0.92 0.92 0.90 1</ambient>
+          <diffuse>0.97 0.97 0.95 1</diffuse>
+          <specular>0.10 0.10 0.10 1</specular>
+        </material>
+      </visual>
+      <!-- Blanket (folded strip at foot end) -->
+      <visual name="blanket_vis">
+        <pose>0.7 0 0.51 0 0 0</pose>
+        <geometry><box><size>0.5 0.95 0.08</size></box></geometry>
+        <material>
+          <ambient>0.55 0.16 0.16 1</ambient>
+          <diffuse>0.70 0.20 0.20 1</diffuse>
+          <specular>0.12 0.12 0.12 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

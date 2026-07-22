@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<!--
+  chair | Module B - Furniture
+  Origin: floor centre of the chair. +X = the direction the sitter faces
+          (backrest is on the -X side).
+  R5: ONE simplified collision box enclosing the whole chair instead of
+      per-part collisions. This keeps 24 hall chairs + 48 cabin chairs cheap for ODE.
+  Premium dark-blue upholstery on charcoal metal legs.
+-->
+<sdf version="1.6">
+  <model name="chair">
+    <static>true</static>
+
+    <link name="chair_link">
+      <!-- ===== R5 SIMPLIFIED COLLISION (single box) ===== -->
+      <collision name="chair_col">
+        <pose>0 0 0.45 0 0 0</pose>
+        <geometry>
+          <box><size>0.45 0.45 0.90</size></box>
+        </geometry>
+        <surface>
+          <friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction>
+        </surface>
+      </collision>
+
+      <!-- ===== DETAILED VISUALS ===== -->
+      <!-- Seat cushion -->
+      <visual name="seat_vis">
+        <pose>0 0 0.45 0 0 0</pose>
+        <geometry><box><size>0.45 0.45 0.05</size></box></geometry>
+        <material>
+          <ambient>0.20 0.22 0.26 1</ambient>
+          <diffuse>0.28 0.30 0.36 1</diffuse>
+          <specular>0.10 0.10 0.12 1</specular>
+        </material>
+      </visual>
+
+      <!-- Backrest (on -X side) -->
+      <visual name="back_vis">
+        <pose>-0.20 0 0.68 0 0 0</pose>
+        <geometry><box><size>0.05 0.45 0.45</size></box></geometry>
+        <material>
+          <ambient>0.20 0.22 0.26 1</ambient>
+          <diffuse>0.28 0.30 0.36 1</diffuse>
+          <specular>0.10 0.10 0.12 1</specular>
+        </material>
+      </visual>
+
+      <!-- Four legs (charcoal metal, high specular) -->
+      <visual name="leg_fl">
+        <pose>0.18 0.18 0.215 0 0 0</pose>
+        <geometry><box><size>0.04 0.04 0.43</size></box></geometry>
+        <material><ambient>0.10 0.10 0.11 1</ambient><diffuse>0.15 0.15 0.16 1</diffuse><specular>0.30 0.30 0.32 1</specular></material>
+      </visual>
+      <visual name="leg_fr">
+        <pose>0.18 -0.18 0.215 0 0 0</pose>
+        <geometry><box><size>0.04 0.04 0.43</size></box></geometry>
+        <material><ambient>0.10 0.10 0.11 1</ambient><diffuse>0.15 0.15 0.16 1</diffuse><specular>0.30 0.30 0.32 1</specular></material>
+      </visual>
+      <visual name="leg_bl">
+        <pose>-0.18 0.18 0.215 0 0 0</pose>
+        <geometry><box><size>0.04 0.04 0.43</size></box></geometry>
+        <material><ambient>0.10 0.10 0.11 1</ambient><diffuse>0.15 0.15 0.16 1</diffuse><specular>0.30 0.30 0.32 1</specular></material>
+      </visual>
+      <visual name="leg_br">
+        <pose>-0.18 -0.18 0.215 0 0 0</pose>
+        <geometry><box><size>0.04 0.04 0.43</size></box></geometry>
+        <material><ambient>0.10 0.10 0.11 1</ambient><diffuse>0.15 0.15 0.16 1</diffuse><specular>0.30 0.30 0.32 1</specular></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

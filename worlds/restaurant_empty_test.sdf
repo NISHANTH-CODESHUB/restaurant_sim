@@ -1,0 +1,254 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="restaurant_empty_test">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <!-- Ground Floor Structure Shell -->
+    <!-- Floor Slabs (6x4 grid) -->
+    <include><name>floor_slab_0_0</name><uri>model://_components/floor_slab</uri><pose>-10 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_1_0</name><uri>model://_components/floor_slab</uri><pose>-6 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_2_0</name><uri>model://_components/floor_slab</uri><pose>-2 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_3_0</name><uri>model://_components/floor_slab</uri><pose>2 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_4_0</name><uri>model://_components/floor_slab</uri><pose>6 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_5_0</name><uri>model://_components/floor_slab</uri><pose>10 -6 0 0 0 0</pose></include>
+    <include><name>floor_slab_0_1</name><uri>model://_components/floor_slab</uri><pose>-10 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_1_1</name><uri>model://_components/floor_slab</uri><pose>-6 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_2_1</name><uri>model://_components/floor_slab</uri><pose>-2 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_3_1</name><uri>model://_components/floor_slab</uri><pose>2 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_4_1</name><uri>model://_components/floor_slab</uri><pose>6 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_5_1</name><uri>model://_components/floor_slab</uri><pose>10 -2 0 0 0 0</pose></include>
+    <include><name>floor_slab_0_2</name><uri>model://_components/floor_slab</uri><pose>-10 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_1_2</name><uri>model://_components/floor_slab</uri><pose>-6 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_2_2</name><uri>model://_components/floor_slab</uri><pose>-2 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_3_2</name><uri>model://_components/floor_slab</uri><pose>2 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_4_2</name><uri>model://_components/floor_slab</uri><pose>6 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_5_2</name><uri>model://_components/floor_slab</uri><pose>10 2 0 0 0 0</pose></include>
+    <include><name>floor_slab_0_3</name><uri>model://_components/floor_slab</uri><pose>-10 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_1_3</name><uri>model://_components/floor_slab</uri><pose>-6 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_2_3</name><uri>model://_components/floor_slab</uri><pose>-2 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_3_3</name><uri>model://_components/floor_slab</uri><pose>2 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_4_3</name><uri>model://_components/floor_slab</uri><pose>6 6 0 0 0 0</pose></include>
+    <include><name>floor_slab_5_3</name><uri>model://_components/floor_slab</uri><pose>10 6 0 0 0 0</pose></include>
+
+    <!-- Ground Floor Exterior Walls -->
+    <include><name>ext_wall_s0</name><uri>model://_components/wall_exterior</uri><pose>-10 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s1</name><uri>model://_components/window_standard</uri><pose>-6 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s2</name><uri>model://_components/door_double</uri><pose>-2 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s3</name><uri>model://_components/window_standard</uri><pose>2 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s4</name><uri>model://_components/wall_exterior</uri><pose>6 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_s5</name><uri>model://_components/wall_exterior</uri><pose>10 -8 0 0 0 0</pose></include>
+    <include><name>ext_wall_n0</name><uri>model://_components/wall_exterior</uri><pose>-10 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n1</name><uri>model://_components/window_standard</uri><pose>-6 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n2</name><uri>model://_components/window_standard</uri><pose>-2 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n3</name><uri>model://_components/window_standard</uri><pose>2 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n4</name><uri>model://_components/wall_exterior</uri><pose>6 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_n5</name><uri>model://_components/wall_exterior</uri><pose>10 8 0 0 0 3.14159</pose></include>
+    <include><name>ext_wall_w0</name><uri>model://_components/wall_exterior</uri><pose>-12 -6 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_w1</name><uri>model://_components/wall_exterior</uri><pose>-12 -2 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_w2</name><uri>model://_components/wall_exterior</uri><pose>-12 2 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_w3</name><uri>model://_components/wall_exterior</uri><pose>-12 6 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_e0</name><uri>model://_components/wall_exterior</uri><pose>12 -6 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_e1</name><uri>model://_components/wall_exterior</uri><pose>12 -2 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_e2</name><uri>model://_components/wall_exterior</uri><pose>12 2 0 0 0 1.5708</pose></include>
+    <include><name>ext_wall_e3</name><uri>model://_components/wall_exterior</uri><pose>12 6 0 0 0 1.5708</pose></include>
+
+    <!-- Ground Floor Columns -->
+    <include><name>column_0</name><uri>model://_components/column</uri><pose>-6 -4 0 0 0 0</pose></include>
+    <include><name>column_1</name><uri>model://_components/column</uri><pose>-2 -4 0 0 0 0</pose></include>
+    <include><name>column_2</name><uri>model://_components/column</uri><pose>2 -4 0 0 0 0</pose></include>
+    <include><name>column_3</name><uri>model://_components/column</uri><pose>-6 4 0 0 0 0</pose></include>
+    <include><name>column_4</name><uri>model://_components/column</uri><pose>-2 4 0 0 0 0</pose></include>
+    <include><name>column_5</name><uri>model://_components/column</uri><pose>2 4 0 0 0 0</pose></include>
+
+    <!-- Fixtures -->
+    <include><name>stairs</name><uri>model://_fixtures/staircase</uri><pose>-10 0 0 0 0 1.5708</pose></include>
+    <include><name>lift_shaft_inst</name><uri>model://_fixtures/lift_shaft</uri><pose>-10 5.5 0 0 0 0</pose></include>
+    <include><name>lift_cabin_inst</name><uri>model://_fixtures/lift_cabin</uri><pose>-10 5.5 0 0 0 0</pose></include>
+
+    <!-- Ground Floor Partition Walls -->
+    <include><name>kitchen_partition_n</name><uri>model://_components/wall_segment_4m</uri><pose>5.0 7.0 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_partition_mid1</name><uri>model://_components/wall_segment</uri><pose>5.0 3.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_partition_mid2</name><uri>model://_components/wall_segment</uri><pose>5.0 1.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_partition_mid3</name><uri>model://_components/wall_segment</uri><pose>5.0 -1.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_partition_mid4</name><uri>model://_components/wall_segment</uri><pose>5.0 -3.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_wall_1_2_a</name><uri>model://_components/wall_segment_4m</uri><pose>7.0 2.5 0 0 0 0</pose></include>
+    <include><name>kitchen_wall_1_2_b</name><uri>model://_components/wall_segment_4m</uri><pose>10.0 2.5 0 0 0 0</pose></include>
+    <include><name>kitchen_wall_2_3_a</name><uri>model://_components/wall_segment_4m</uri><pose>7.0 -2.5 0 0 0 0</pose></include>
+    <include><name>kitchen_wall_2_3_b</name><uri>model://_components/wall_segment_4m</uri><pose>10.0 -2.5 0 0 0 0</pose></include>
+    <include><name>kitchen_door_1</name><uri>model://_components/door_single_wide</uri><pose>5.0 2.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_door_2</name><uri>model://_components/door_single_wide</uri><pose>5.0 -2.5 0 0 0 1.5708</pose></include>
+    <include><name>kitchen_door_3</name><uri>model://_components/door_single_wide</uri><pose>5.0 -7.0 0 0 0 1.5708</pose></include>
+
+
+    <!-- First Floor Structure Shell (placed at z = 3.5) -->
+    <!-- Floor Slabs -->
+    <include><name>f1_floor_slab_0_0</name><uri>model://_components/floor_slab</uri><pose>-10 -6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_1_0</name><uri>model://_components/floor_slab</uri><pose>-6 -6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_2_0</name><uri>model://_components/floor_slab</uri><pose>-2 -6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_3_0</name><uri>model://_components/floor_slab</uri><pose>2 -6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_4_0</name><uri>model://_components/floor_slab</uri><pose>6 -6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_5_0</name><uri>model://_components/floor_slab</uri><pose>10 -6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_0_1</name><uri>model://_components/floor_slab</uri><pose>-10 -2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_1_1</name><uri>model://_components/floor_slab</uri><pose>-6 -2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_2_1</name><uri>model://_components/floor_slab</uri><pose>-2 -2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_3_1</name><uri>model://_components/floor_slab</uri><pose>2 -2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_4_1</name><uri>model://_components/floor_slab</uri><pose>6 -2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_5_1</name><uri>model://_components/floor_slab</uri><pose>10 -2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_1_2</name><uri>model://_components/floor_slab</uri><pose>-6 2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_2_2</name><uri>model://_components/floor_slab</uri><pose>-2 2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_3_2</name><uri>model://_components/floor_slab</uri><pose>2 2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_4_2</name><uri>model://_components/floor_slab</uri><pose>6 2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_5_2</name><uri>model://_components/floor_slab</uri><pose>10 2 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_1_3</name><uri>model://_components/floor_slab</uri><pose>-6 6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_2_3</name><uri>model://_components/floor_slab</uri><pose>-2 6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_3_3</name><uri>model://_components/floor_slab</uri><pose>2 6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_4_3</name><uri>model://_components/floor_slab</uri><pose>6 6 3.5 0 0 0</pose></include>
+    <include><name>f1_floor_slab_5_3</name><uri>model://_components/floor_slab</uri><pose>10 6 3.5 0 0 0</pose></include>
+
+    <!-- First Floor Walking area fillers -->
+    <model name="f1_fillers">
+      <static>true</static>
+      <link name="link">
+        <pose>0 0 0 0 0 0</pose>
+        <collision name="strip_l">
+          <pose>-11.375 4.0 3.525 0 0 0</pose>
+          <geometry><box><size>1.25 8.0 0.05</size></box></geometry>
+        </collision>
+        <visual name="strip_l">
+          <pose>-11.375 4.0 3.525 0 0 0</pose>
+          <geometry><box><size>1.25 8.0 0.05</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse></material>
+        </visual>
+        <collision name="strip_r">
+          <pose>-8.625 4.0 3.525 0 0 0</pose>
+          <geometry><box><size>1.25 8.0 0.05</size></box></geometry>
+        </collision>
+        <visual name="strip_r">
+          <pose>-8.625 4.0 3.525 0 0 0</pose>
+          <geometry><box><size>1.25 8.0 0.05</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse></material>
+        </visual>
+        <collision name="strip_n">
+          <pose>-10.0 7.25 3.525 0 0 0</pose>
+          <geometry><box><size>1.5 1.5 0.05</size></box></geometry>
+        </collision>
+        <visual name="strip_n">
+          <pose>-10.0 7.25 3.525 0 0 0</pose>
+          <geometry><box><size>1.5 1.5 0.05</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- First Floor Exterior Walls -->
+    <include><name>f1_ext_wall_s0</name><uri>model://_components/wall_exterior</uri><pose>-10 -8 3.5 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s1</name><uri>model://_components/window_standard</uri><pose>-6 -8 3.5 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s2</name><uri>model://_components/window_standard</uri><pose>-2 -8 3.5 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s3</name><uri>model://_components/window_standard</uri><pose>2 -8 3.5 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s4</name><uri>model://_components/wall_exterior</uri><pose>6 -8 3.5 0 0 0</pose></include>
+    <include><name>f1_ext_wall_s5</name><uri>model://_components/wall_exterior</uri><pose>10 -8 3.5 0 0 0</pose></include>
+    <include><name>f1_ext_wall_n0</name><uri>model://_components/wall_exterior</uri><pose>-10 8 3.5 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n1</name><uri>model://_components/window_standard</uri><pose>-6 8 3.5 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n2</name><uri>model://_components/window_standard</uri><pose>-2 8 3.5 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n3</name><uri>model://_components/window_standard</uri><pose>2 8 3.5 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n4</name><uri>model://_components/wall_exterior</uri><pose>6 8 3.5 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_n5</name><uri>model://_components/wall_exterior</uri><pose>10 8 3.5 0 0 3.14159</pose></include>
+    <include><name>f1_ext_wall_w0</name><uri>model://_components/wall_exterior</uri><pose>-12 -6 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_w1</name><uri>model://_components/wall_exterior</uri><pose>-12 -2 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_w2</name><uri>model://_components/wall_exterior</uri><pose>-12 2 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_w3</name><uri>model://_components/wall_exterior</uri><pose>-12 6 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_e0</name><uri>model://_components/wall_exterior</uri><pose>12 -6 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_e1</name><uri>model://_components/wall_exterior</uri><pose>12 -2 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_e2</name><uri>model://_components/wall_exterior</uri><pose>12 2 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_ext_wall_e3</name><uri>model://_components/wall_exterior</uri><pose>12 6 3.5 0 0 1.5708</pose></include>
+
+    <!-- First Floor Columns -->
+    <include><name>f1_column_0</name><uri>model://_components/column</uri><pose>-6 -4 3.5 0 0 0</pose></include>
+    <include><name>f1_column_1</name><uri>model://_components/column</uri><pose>-2 -4 3.5 0 0 0</pose></include>
+    <include><name>f1_column_2</name><uri>model://_components/column</uri><pose>2 -4 3.5 0 0 0</pose></include>
+    <include><name>f1_column_3</name><uri>model://_components/column</uri><pose>-6 4 3.5 0 0 0</pose></include>
+    <include><name>f1_column_4</name><uri>model://_components/column</uri><pose>-2 4 3.5 0 0 0</pose></include>
+    <include><name>f1_column_5</name><uri>model://_components/column</uri><pose>2 4 3.5 0 0 0</pose></include>
+
+    <!-- First Floor Corridor Partition Walls -->
+    <include><name>f1_corridor_n_wall_1</name><uri>model://_components/wall_segment_4m</uri><pose>-6 1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_corridor_n_wall_2</name><uri>model://_components/wall_segment_4m</uri><pose>-2 1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_corridor_n_wall_3</name><uri>model://_components/wall_segment_4m</uri><pose>2 1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_corridor_n_wall_4</name><uri>model://_components/wall_segment_4m</uri><pose>6 1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_corridor_s_wall_1</name><uri>model://_components/wall_segment_4m</uri><pose>-6 -1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_corridor_s_wall_2</name><uri>model://_components/wall_segment_4m</uri><pose>-2 -1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_corridor_s_wall_3</name><uri>model://_components/wall_segment_4m</uri><pose>2 -1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_corridor_s_wall_4</name><uri>model://_components/wall_segment_4m</uri><pose>6 -1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_cabin_door_1</name><uri>model://_components/door_single</uri><pose>-6 1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_cabin_door_2</name><uri>model://_components/door_single</uri><pose>-2 1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_cabin_door_3</name><uri>model://_components/door_single</uri><pose>2 1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_cabin_door_4</name><uri>model://_components/door_single</uri><pose>6 1.0 3.5 0 0 0</pose></include>
+    <include><name>f1_cabin_door_5</name><uri>model://_components/door_single</uri><pose>-6 -1.0 3.5 0 0 3.14159</pose></include>
+    <include><name>f1_cabin_door_6</name><uri>model://_components/door_single</uri><pose>-2 -1.0 3.5 0 0 3.14159</pose></include>
+    <include><name>f1_cabin_door_7</name><uri>model://_components/door_single</uri><pose>2 -1.0 3.5 0 0 3.14159</pose></include>
+    <include><name>f1_cabin_door_8</name><uri>model://_components/door_single</uri><pose>6 -1.0 3.5 0 0 3.14159</pose></include>
+
+    <!-- First Floor Cabin Division Walls -->
+    <include><name>f1_div_wall_n0_a</name><uri>model://_components/wall_segment_4m</uri><pose>-8 3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_n0_b</name><uri>model://_components/wall_segment_4m</uri><pose>-8 6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_n1_a</name><uri>model://_components/wall_segment_4m</uri><pose>-4 3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_n1_b</name><uri>model://_components/wall_segment_4m</uri><pose>-4 6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_n2_a</name><uri>model://_components/wall_segment_4m</uri><pose>0 3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_n2_b</name><uri>model://_components/wall_segment_4m</uri><pose>0 6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_n3_a</name><uri>model://_components/wall_segment_4m</uri><pose>4 3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_n3_b</name><uri>model://_components/wall_segment_4m</uri><pose>4 6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_n4_a</name><uri>model://_components/wall_segment_4m</uri><pose>8 3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_n4_b</name><uri>model://_components/wall_segment_4m</uri><pose>8 6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s0_a</name><uri>model://_components/wall_segment_4m</uri><pose>-8 -3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s0_b</name><uri>model://_components/wall_segment_4m</uri><pose>-8 -6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s1_a</name><uri>model://_components/wall_segment_4m</uri><pose>-4 -3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s1_b</name><uri>model://_components/wall_segment_4m</uri><pose>-4 -6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s2_a</name><uri>model://_components/wall_segment_4m</uri><pose>0 -3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s2_b</name><uri>model://_components/wall_segment_4m</uri><pose>0 -6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s3_a</name><uri>model://_components/wall_segment_4m</uri><pose>4 -3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s3_b</name><uri>model://_components/wall_segment_4m</uri><pose>4 -6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s4_a</name><uri>model://_components/wall_segment_4m</uri><pose>8 -3.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_div_wall_s4_b</name><uri>model://_components/wall_segment_4m</uri><pose>8 -6.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_utility_door_n</name><uri>model://_components/door_single</uri><pose>8 2.0 3.5 0 0 1.5708</pose></include>
+    <include><name>f1_utility_door_s</name><uri>model://_components/door_single</uri><pose>8 -2.0 3.5 0 0 1.5708</pose></include>
+
+    <!-- First Floor Ceiling Slabs (Roof) -->
+    <include><name>f1_ceil_slab_0_0</name><uri>model://_components/ceiling_slab</uri><pose>-10 -6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_1_0</name><uri>model://_components/ceiling_slab</uri><pose>-6 -6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_2_0</name><uri>model://_components/ceiling_slab</uri><pose>-2 -6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_3_0</name><uri>model://_components/ceiling_slab</uri><pose>2 -6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_4_0</name><uri>model://_components/ceiling_slab</uri><pose>6 -6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_5_0</name><uri>model://_components/ceiling_slab</uri><pose>10 -6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_0_1</name><uri>model://_components/ceiling_slab</uri><pose>-10 -2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_1_1</name><uri>model://_components/ceiling_slab</uri><pose>-6 -2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_2_1</name><uri>model://_components/ceiling_slab</uri><pose>-2 -2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_3_1</name><uri>model://_components/ceiling_slab</uri><pose>2 -2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_4_1</name><uri>model://_components/ceiling_slab</uri><pose>6 -2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_5_1</name><uri>model://_components/ceiling_slab</uri><pose>10 -2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_0_2</name><uri>model://_components/ceiling_slab</uri><pose>-10 2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_1_2</name><uri>model://_components/ceiling_slab</uri><pose>-6 2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_2_2</name><uri>model://_components/ceiling_slab</uri><pose>-2 2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_3_2</name><uri>model://_components/ceiling_slab</uri><pose>2 2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_4_2</name><uri>model://_components/ceiling_slab</uri><pose>6 2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_5_2</name><uri>model://_components/ceiling_slab</uri><pose>10 2 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_1_3</name><uri>model://_components/ceiling_slab</uri><pose>-6 6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_2_3</name><uri>model://_components/ceiling_slab</uri><pose>-2 6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_3_3</name><uri>model://_components/ceiling_slab</uri><pose>2 6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_4_3</name><uri>model://_components/ceiling_slab</uri><pose>6 6 6.9 0 0 0</pose></include>
+    <include><name>f1_ceil_slab_5_3</name><uri>model://_components/ceiling_slab</uri><pose>10 6 6.9 0 0 0</pose></include>
+
+  </world>
+</sdf>

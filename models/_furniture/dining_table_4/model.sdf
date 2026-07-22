@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!--
+  dining_table_4 | Module B - Furniture
+  1.0 x 1.0 m top at height 0.75 m. Origin: floor centre of the table.
+  R5: collision = tabletop box + single central pedestal box (not 4 thin legs),
+      so robots see a clean obstacle and ODE stays cheap.
+  Chairs are placed SEPARATELY by the floor assembly (this model is table-only,
+  keeping it truly reusable for any seat count / arrangement).
+-->
+<sdf version="1.6">
+  <model name="dining_table_4">
+    <static>true</static>
+
+    <link name="table_link">
+      <!-- ===== R5 COLLISIONS ===== -->
+      <!-- Tabletop -->
+      <collision name="top_col">
+        <pose>0 0 0.73 0 0 0</pose>
+        <geometry><box><size>1.0 1.0 0.05</size></box></geometry>
+      </collision>
+      <!-- Central pedestal (single box, robot-friendly) -->
+      <collision name="pedestal_col">
+        <pose>0 0 0.36 0 0 0</pose>
+        <geometry><box><size>0.12 0.12 0.72</size></box></geometry>
+        <surface><friction><ode><mu>0.6</mu><mu2>0.6</mu2></ode></friction></surface>
+      </collision>
+
+      <!-- ===== VISUALS ===== -->
+      <!-- Tabletop: warm oak -->
+      <visual name="top_vis">
+        <pose>0 0 0.73 0 0 0</pose>
+        <geometry><box><size>1.0 1.0 0.05</size></box></geometry>
+        <material>
+          <ambient>0.32 0.22 0.12 1</ambient>
+          <diffuse>0.48 0.33 0.18 1</diffuse>
+          <specular>0.20 0.15 0.10 1</specular>
+        </material>
+      </visual>
+      <!-- Central column -->
+      <visual name="column_vis">
+        <pose>0 0 0.38 0 0 0</pose>
+        <geometry><box><size>0.10 0.10 0.70</size></box></geometry>
+        <material><ambient>0.12 0.12 0.13 1</ambient><diffuse>0.18 0.18 0.19 1</diffuse><specular>0.35 0.35 0.37 1</specular></material>
+      </visual>
+      <!-- Cross base foot -->
+      <visual name="base_vis">
+        <pose>0 0 0.03 0 0 0</pose>
+        <geometry><box><size>0.55 0.55 0.05</size></box></geometry>
+        <material><ambient>0.12 0.12 0.13 1</ambient><diffuse>0.18 0.18 0.19 1</diffuse><specular>0.35 0.35 0.37 1</specular></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

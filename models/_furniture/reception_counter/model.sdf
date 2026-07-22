@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!--
+  reception_counter | Module B - Furniture
+  2.0 (X) x 0.7 (Y) m footprint, 1.1 m tall body + overhanging top lip.
+  Origin: floor centre. Solid obstacle -> single box collision (R5).
+-->
+<sdf version="1.6">
+  <model name="reception_counter">
+    <static>true</static>
+    <link name="counter_link">
+      <!-- R5 single collision -->
+      <collision name="counter_col">
+        <pose>0 0 0.55 0 0 0</pose>
+        <geometry><box><size>2.0 0.7 1.1</size></box></geometry>
+      </collision>
+      <!-- Body: dark premium -->
+      <visual name="body_vis">
+        <pose>0 0 0.53 0 0 0</pose>
+        <geometry><box><size>2.0 0.7 1.06</size></box></geometry>
+        <material><ambient>0.15 0.14 0.16 1</ambient><diffuse>0.22 0.21 0.24 1</diffuse><specular>0.20 0.20 0.22 1</specular></material>
+      </visual>
+      <!-- Top lip: light stone -->
+      <visual name="top_vis">
+        <pose>0 0.02 1.09 0 0 0</pose>
+        <geometry><box><size>2.1 0.8 0.04</size></box></geometry>
+        <material><ambient>0.70 0.70 0.72 1</ambient><diffuse>0.82 0.82 0.84 1</diffuse><specular>0.45 0.45 0.47 1</specular></material>
+      </visual>
+      <!-- Accent strip (subtle emissive branding light) -->
+      <visual name="accent_vis">
+        <pose>0 -0.36 0.30 0 0 0</pose>
+        <geometry><box><size>1.9 0.02 0.05</size></box></geometry>
+        <material>
+          <ambient>0.10 0.30 0.45 1</ambient><diffuse>0.15 0.45 0.65 1</diffuse>
+          <emissive>0.10 0.35 0.55 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
